@@ -1,84 +1,69 @@
-# **Table of Contents** {#table-of-contents}
+<a id="table-of-contents"></a>
 
-[Table of Contents	1](#table-of-contents)
+# Table of Contents
 
-[**Project Outline	2**](#project-outline)
+## Project Outline
 
-[The Pipeline	2](#the-pipeline)
+- [Project Outline](#project-outline)
+- [The Pipeline](#the-pipeline)
+- [Refactored Repository Architecture](#refactored-repository-architecture)
+- [Phase 1: Engine Initialization & Baseline Generation](#phase-1-engine-initialization-baseline-generation)
+  - [Blueprint 1: Enterprise Data Generation](#blueprint-1-enterprise-data-generation)
+  - [Blueprint 2: Path-Dependent State Machine](#blueprint-2-path-dependent-state-machine)
+  - [Blueprint 3: The Baseline Organizer (Financial Enrichment)](#blueprint-3-baseline-organizer-financial-enrichment)
+  - [Blueprint 4.1: Raw Data & Complete Audit Trace](#blueprint-4-1-raw-data-complete-audit-trace)
+  - [Blueprint 4.1.1: Purchasing Cadence Matrix](#blueprint-4-1-1-purchasing-cadence-matrix)
+  - [Blueprint 4.2: The Visual Dashboard (Modular Upgrade)](#blueprint-4-2-visual-dashboard-modular-upgrade)
+  - [Blueprint 4.3: Excel Deliverable](#blueprint-4-3-excel-deliverable)
+- [Phase 2: State Inheritance & The Beta Engine](#phase-2-state-inheritance-beta-engine)
+  - [Blueprint 5: State Inheritance & Time Shift](#blueprint-5-state-inheritance-time-shift)
+  - [Blueprint 6: The Chaos Injector](#blueprint-6-chaos-injector)
+  - [Blueprint 7: The Beta Recalculation Engine](#blueprint-7-beta-recalculation-engine)
+- [Phase 2.b: The Beta Presentation Layer](#phase-2b-beta-presentation-layer)
+- [Phase 3: Comparative Delta Engine](#phase-3-comparative-delta-engine)
+  - [Blueprint 8: Absolute Calendar Join Engine](#blueprint-8-absolute-calendar-join-engine)
+  - [Blueprint 9: Exception Organizer & Filter (Executive Rollup)](#blueprint-9-exception-organizer-executive-rollup)
+- [Phase 4: The Delta Presentation Layer](#phase-4-delta-presentation-layer)
+  - [Blueprint 10: AI Agent Payload & Supplier Comms](#blueprint-10-ai-agent-payload-supplier-comms)
+  - [Blueprint 10.1: Comparative Dashboards (The Master Version)](#blueprint-10-1-comparative-dashboards)
+  - [Blueprint 10.2: The Enterprise Excel Exporter (Upgraded)](#blueprint-10-2-enterprise-excel-exporter)
+- [Phase 5: Excel Shadow Ledger](#phase-5-excel-shadow-ledger)
+  - [Blueprint 17: Alpha System of Record (Dead Cells)](#blueprint-17-alpha-system-of-record)
+  - [Blueprint 18: Beta System of Record (Day X)](#blueprint-18-beta-system-of-record)
+  - [Blueprint 19: The Delta System of Record (Shadow Ledger)](#blueprint-19-delta-system-of-record)
+- [Phase 6: Pure Excel Code](#phase-6-pure-excel-code)
+  - [Blueprint 12-16: Interactive Excel Sandbox](#blueprint-12-16-interactive-excel-sandbox)
+- [Phase 7: Excel vs Python Isomorphism Testing](#phase-7-excel-python-isomorphism-testing)
+  - [Blueprint 20: CI/CD Test Fixture & Semantic Auditor](#blueprint-20-cicd-test-fixture-semantic-auditor)
 
-[Refactored Repository Architecture	3](#refactored-repository-architecture)
+## Technical Documentation
 
-[Phase 1: Engine Initialization & Baseline Generation	4](#phase-1:-engine-initialization-&-baseline-generation)
+- [Technical Documentation](#technical-documentation)
+- [CLI & Pipeline Orchestration](#cli-pipeline-orchestration)
+- [Phase 1 — Technical](#phase-1-technical)
+  - [Blueprint 1 — Technical: Enterprise Data Generation](#blueprint-1-technical)
+  - [Blueprint 2 — Technical: Path-Dependent State Machine](#blueprint-2-technical)
+  - [Blueprint 3 — Technical: Baseline Organizer](#blueprint-3-technical)
+  - [Blueprint 4.2 — Technical: Visual Dashboard](#blueprint-4-2-technical)
+- [Phase 2 — Technical](#phase-2-technical)
+  - [Blueprint 5 — Technical: State Inheritance](#blueprint-5-technical)
+  - [Blueprint 7 — Technical: Beta Recalculation](#blueprint-7-technical)
+- [Phase 3 — Technical](#phase-3-technical)
+  - [Blueprint 8 — Technical: Calendar Join](#blueprint-8-technical)
+  - [Blueprint 9 — Technical: Executive Rollup](#blueprint-9-technical)
+  - [Blueprint 10.2 — Technical: Campaign Compression](#blueprint-10-2-technical)
+- [Output Artifacts Reference](#output-artifacts-reference)
+- [Glossary 1: Supply Chain Physics (The MRP Business Logic)](#glossary-1-supply-chain-physics)
+- [Glossary 2: Excel Engine Functions (The Syntax Mechanics)](#glossary-2-excel-engine-functions)
+- [Architectural Transition: From Colab Notebook to Modular Pipeline](#architectural-transition)
 
-[Blueprint 1: Enterprise Data Generation	4](#blueprint-1:-enterprise-data-generation)
+<a id="project-outline"></a>
 
-[Blueprint 2: Path-Dependent State Machine	4](#blueprint-2:-path-dependent-state-machine)
+# Project Outline
 
-[Blueprint 3: The Baseline Organizer (Financial Enrichment)	5](#blueprint-3:-the-baseline-organizer-(financial-enrichment))
+<a id="the-pipeline"></a>
 
-[Blueprint 4.1: Raw Data & Complete Audit Trace	5](#blueprint-4.1:-raw-data-&-complete-audit-trace)
-
-[Blueprint 4.1.1: Purchasing Cadence Matrix	5](#blueprint-4.1.1:-purchasing-cadence-matrix)
-
-[Blueprint 4.2: The Visual Dashboard (Modular Upgrade)	6](#blueprint-4.2:-the-visual-dashboard-(modular-upgrade))
-
-[Blueprint 4.3: Excel Deliverable	6](#blueprint-4.3:-excel-deliverable)
-
-[Phase 2: State Inheritance & The Beta Engine	6](#phase-2:-state-inheritance-&-the-beta-engine)
-
-[Blueprint 5: State Inheritance & Time Shift	6](#blueprint-5:-state-inheritance-&-time-shift)
-
-[Blueprint 6: The Chaos Injector	7](#blueprint-6:-the-chaos-injector)
-
-[Blueprint 7: The Beta Recalculation Engine	7](#blueprint-7:-the-beta-recalculation-engine)
-
-[Phase 2.b: The Beta Presentation Layer	7](#phase-2.b:-the-beta-presentation-layer)
-
-[Phase 3: Comparative Delta Engine	8](#phase-3:-comparative-delta-engine)
-
-[Blueprint 8: Absolute Calendar Join Engine	8](#blueprint-8:-absolute-calendar-join-engine)
-
-[Blueprint 9: Exception Organizer & Filter (Executive Rollup)	8](#blueprint-9:-exception-organizer-&-filter-(executive-rollup))
-
-[Phase 4: The Delta Presentation Layer	8](#phase-4:-the-delta-presentation-layer)
-
-[Blueprint 10: AI Agent Payload & Supplier Comms	9](#blueprint-10:-ai-agent-payload-&-supplier-comms)
-
-[Blueprint 10.1: Comparative Dashboards (The Master Version)	9](#blueprint-10.1:-comparative-dashboards-(the-master-version))
-
-[Blueprint 10.2: The Enterprise Excel Exporter (Upgraded)	9](#blueprint-10.2:-the-enterprise-excel-exporter-(upgraded))
-
-[Phase 5: Excel Shadow Ledger	9](#phase-5:-excel-shadow-ledger)
-
-[Blueprint 17: Alpha System of Record (Dead Cells)	9](#blueprint-17:-alpha-system-of-record-(dead-cells))
-
-[Blueprint 18: Beta System of Record (Day X)	10](#blueprint-18:-beta-system-of-record-(day-x))
-
-[Blueprint 19: The Delta System of Record (Shadow Ledger)	10](#blueprint-19:-the-delta-system-of-record-(shadow-ledger))
-
-[Phase 6: Pure Excel Code	10](#phase-6:-pure-excel-code)
-
-[Blueprint 12–16: Interactive Excel Sandbox	10](#blueprint-12–16:-interactive-excel-sandbox)
-
-[Phase 7: Excel vs Python Isomorphism Testing	11](#phase-7:-excel-vs-python-isomorphism-testing)
-
-[Blueprint 20: CI/CD Test Fixture & Semantic Auditor	11](#blueprint-20:-cicd-test-fixture-&-semantic-auditor)
-
-[**Technical Documentation	12**](#technical-documentation)
-
-[CLI & Pipeline Orchestration	12](#cli-&-pipeline-orchestration)
-
-[Output Artifacts Reference	13](#output-artifacts-reference)
-
-[Glossary 1: Supply Chain Physics (The MRP Business Logic)	14](#glossary-1:-supply-chain-physics-(the-mrp-business-logic))
-
-[Glossary 2: Excel Engine Functions (The Syntax Mechanics)	15](#glossary-2:-excel-engine-functions-(the-syntax-mechanics))
-
-[Architectural Transition: From Colab Notebook to Modular Pipeline	16](#architectural-transition:-from-colab-notebook-to-modular-pipeline)
-
-# **Project Outline** {#project-outline}
-
-## **The Pipeline** {#the-pipeline}
+## The Pipeline
 
 **Code:** [`main.py`](main.py) · [`pipeline/runner.py`](pipeline/runner.py)
 
@@ -173,11 +158,13 @@ The refactored codebase preserves the original **Blueprint** numbering and busin
 
 ---
 
-## **Refactored Repository Architecture** {#refactored-repository-architecture}
+<a id="refactored-repository-architecture"></a>
+
+## Refactored Repository Architecture
 
 *Objective: Run the full pipeline reproducibly without notebook-style side effects.*
 
-### **Module Map**
+### Module Map
 
 | Blueprint domain | Module path |
 |------------------|-------------|
@@ -195,12 +182,12 @@ The refactored codebase preserves the original **Blueprint** numbering and busin
 | AI payload & supplier email drafts | [`mrp/ai/supplier_comms.py`](mrp/ai/supplier_comms.py) |
 | Phase orchestration | [`pipeline/runner.py`](pipeline/runner.py) |
 
-### **Execution Entry Points**
+### Execution Entry Points
 
 * **`main.py`** — CLI with `--phase alpha|beta|delta|full`, `--no-dashboards`, `--fixtures`, `--semantic-test`, `--smoke-test`
 * **`run_alpha()` / `run_beta()` / `run_delta()` / `run_full()`** — Callable pipeline functions returning typed result dataclasses (`AlphaResult`, `BetaResult`, `DeltaResult`)
 
-### **Design Rules (Refactor)**
+### Design Rules (Refactor)
 
 * **No code runs on import** — Side effects (CSV/Excel/PNG writes) occur only when pipeline functions are invoked.
 * **One canonical function per blueprint** — Duplicate Colab cell definitions were deduplicated during extraction.
@@ -208,11 +195,15 @@ The refactored codebase preserves the original **Blueprint** numbering and busin
 
 ---
 
-## **Phase 1: Engine Initialization & Baseline Generation** {#phase-1:-engine-initialization-&-baseline-generation}
+<a id="phase-1-engine-initialization-baseline-generation"></a>
+
+## Phase 1: Engine Initialization & Baseline Generation
 
 *Objective: Establish a 24-month unconstrained plan based on starting data and rules.*
 
-### **Blueprint 1: Enterprise Data Generation** {#blueprint-1:-enterprise-data-generation}
+<a id="blueprint-1-enterprise-data-generation"></a>
+
+### Blueprint 1: Enterprise Data Generation
 
 This module serves as the foundation, splitting immutable rules from physical reality.
 
@@ -223,7 +214,9 @@ This module serves as the foundation, splitting immutable rules from physical re
 
 **Code:** [`data/fixtures.py`](data/fixtures.py) · [`mrp/calendar.py`](mrp/calendar.py) (`generate_calendar_horizon`)
 
-### **Blueprint 2: Path-Dependent State Machine** {#blueprint-2:-path-dependent-state-machine}
+<a id="blueprint-2-path-dependent-state-machine"></a>
+
+### Blueprint 2: Path-Dependent State Machine
 
 The core mathematical engine that processes data horizontally through time.
 
@@ -233,7 +226,9 @@ The core mathematical engine that processes data horizontally through time.
 
 **Code:** [`mrp/simulation.py`](mrp/simulation.py) (`execute_sku_simulation`)
 
-### **Blueprint 3: The Baseline Organizer (Financial Enrichment)** {#blueprint-3:-the-baseline-organizer-(financial-enrichment)}
+<a id="blueprint-3-baseline-organizer-financial-enrichment"></a>
+
+### Blueprint 3: The Baseline Organizer (Financial Enrichment)
 
 Translates raw arrays into business intelligence.
 
@@ -242,27 +237,35 @@ Translates raw arrays into business intelligence.
 
 **Code:** [`mrp/enrichment.py`](mrp/enrichment.py) (`enrich_baseline_matrix`)
 
-### **Blueprint 4.1: Raw Data & Complete Audit Trace** {#blueprint-4.1:-raw-data-&-complete-audit-trace}
+<a id="blueprint-4-1-raw-data-complete-audit-trace"></a>
+
+### Blueprint 4.1: Raw Data & Complete Audit Trace
 
 * **The Exception Log:** CSV of timing exceptions only.
 * **The Pedagogical Trace:** Step-by-step text audit of the state machine algebra per SKU.
 
 **Code:** [`mrp/exports/csv_exports.py`](mrp/exports/csv_exports.py)
 
-### **Blueprint 4.1.1: Purchasing Cadence Matrix** {#blueprint-4.1.1:-purchasing-cadence-matrix}
+<a id="blueprint-4-1-1-purchasing-cadence-matrix"></a>
+
+### Blueprint 4.1.1: Purchasing Cadence Matrix
 
 * **The 2D Execution Pivot:** SKUs × calendar months, values = `Planned_Releases` (when buyers must place POs).
 
 **Code:** [`mrp/exports/csv_exports.py`](mrp/exports/csv_exports.py) (`generate_cadence_matrix`)
 
-### **Blueprint 4.2: The Visual Dashboard (Modular Upgrade)** {#blueprint-4.2:-the-visual-dashboard-(modular-upgrade)}
+<a id="blueprint-4-2-visual-dashboard-modular-upgrade"></a>
+
+### Blueprint 4.2: The Visual Dashboard (Modular Upgrade)
 
 * **The 3-Panel Visual Generator:** Sawtooth inventory chart, Seaborn horizon heatmap, dual-axis capital vs revenue risk.
 * **Phase-organized output:** PNGs saved under `output/dashboards/alpha/` and `output/dashboards/beta/` as `{SKU_ID}_dashboard.png`.
 
 **Code:** [`mrp/viz/dashboards.py`](mrp/viz/dashboards.py) (`plot_sku_dashboard`, `generate_all_sku_dashboards`)
 
-### **Blueprint 4.3: Excel Deliverable** {#blueprint-4.3:-excel-deliverable}
+<a id="blueprint-4-3-excel-deliverable"></a>
+
+### Blueprint 4.3: Excel Deliverable
 
 * **Inventory Health Grade:** Dead stock vs active stock (6-month forward demand heuristic).
 * **The Enterprise Workbook:** Executive Summary (with embedded dashboard), 90-Day Action Plan, Raw Horizon Matrix.
@@ -272,11 +275,15 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 2: State Inheritance & The Beta Engine** {#phase-2:-state-inheritance-&-the-beta-engine}
+<a id="phase-2-state-inheritance-beta-engine"></a>
+
+## Phase 2: State Inheritance & The Beta Engine
 
 *Objective: Advance the calendar, lock historical truth, inject chaos, and establish Day X reality.*
 
-### **Blueprint 5: State Inheritance & Time Shift** {#blueprint-5:-state-inheritance-&-time-shift}
+<a id="blueprint-5-state-inheritance-time-shift"></a>
+
+### Blueprint 5: State Inheritance & Time Shift
 
 * **The Calendar Tick:** Drop oldest month, append next month (`advance_rolling_horizon`).
 * **The Baseline Lock:** Month-1 locked inventory becomes Beta `On_Hand`.
@@ -284,14 +291,18 @@ Translates raw arrays into business intelligence.
 
 **Code:** [`mrp/state.py`](mrp/state.py) (`extract_inherited_state`) · [`mrp/calendar.py`](mrp/calendar.py)
 
-### **Blueprint 6: The Chaos Injector** {#blueprint-6:-the-chaos-injector}
+<a id="blueprint-6-chaos-injector"></a>
+
+### Blueprint 6: The Chaos Injector
 
 * **The Chaos Payload:** `CHAOS_PAYLOAD` in [`data/fixtures.py`](data/fixtures.py) — demand shocks, longitudinal shifts, supply delays, constraint mutations, zombie retirement.
 * **Deep-copy isolation:** `deep_copy_beta_state` prevents mutating pristine Alpha structures in memory.
 
 **Code:** [`mrp/state.py`](mrp/state.py) (`apply_chaos_events`)
 
-### **Blueprint 7: The Beta Recalculation Engine** {#blueprint-7:-the-beta-recalculation-engine}
+<a id="blueprint-7-beta-recalculation-engine"></a>
+
+### Blueprint 7: The Beta Recalculation Engine
 
 * **Day X Physics:** Re-runs the same 4-step loop with inherited state and mutated constraints.
 * **Polymorphic Re-Enrichment:** Beta raw matrix passed through `enrich_baseline_matrix` with mutated master data.
@@ -300,7 +311,9 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 2.b: The Beta Presentation Layer** {#phase-2.b:-the-beta-presentation-layer}
+<a id="phase-2b-beta-presentation-layer"></a>
+
+## Phase 2.b: The Beta Presentation Layer
 
 *Objective: Render the consequences of chaos.*
 
@@ -311,18 +324,24 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 3: Comparative Delta Engine** {#phase-3:-comparative-delta-engine}
+<a id="phase-3-comparative-delta-engine"></a>
+
+## Phase 3: Comparative Delta Engine
 
 *Objective: Compare Day 0 to Day X and aggregate variances into actionable blocks.*
 
-### **Blueprint 8: Absolute Calendar Join Engine** {#blueprint-8:-absolute-calendar-join-engine}
+<a id="blueprint-8-absolute-calendar-join-engine"></a>
+
+### Blueprint 8: Absolute Calendar Join Engine
 
 * **Temporal Alignment:** Inner join on `SKU_ID` + `Date_Index`.
 * **Pipeline Volume Patch:** `Action_Delta` from total arrivals (scheduled + planned), not planned receipts alone.
 
 **Code:** [`mrp/delta.py`](mrp/delta.py) (`execute_calendar_join`)
 
-### **Blueprint 9: Exception Organizer & Filter (Executive Rollup)** {#blueprint-9:-exception-organizer-&-filter-(executive-rollup)}
+<a id="blueprint-9-exception-organizer-executive-rollup"></a>
+
+### Blueprint 9: Exception Organizer & Filter (Executive Rollup)
 
 * **Active Variance Filter:** Rows where `Action_Delta != 0` only.
 * **Header-Level Rollup:** Per-SKU campaign summary with date range, net units, capital impact, peak revenue risk.
@@ -331,25 +350,33 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 4: The Delta Presentation Layer** {#phase-4:-the-delta-presentation-layer}
+<a id="phase-4-delta-presentation-layer"></a>
+
+## Phase 4: The Delta Presentation Layer
 
 *Objective: Translate mathematical delta into enterprise deliverables.*
 
-### **Blueprint 10: AI Agent Payload & Supplier Comms** {#blueprint-10:-ai-agent-payload-&-supplier-comms}
+<a id="blueprint-10-ai-agent-payload-supplier-comms"></a>
+
+### Blueprint 10: AI Agent Payload & Supplier Comms
 
 * **Time-Block JSON Serialization:** Compresses monthly exceptions into campaign blocks for LLM consumption.
 * **Agentic Email Drafting:** Mock supplier emails from JSON payload (production: wire to LLM API).
 
 **Code:** [`mrp/ai/supplier_comms.py`](mrp/ai/supplier_comms.py)
 
-### **Blueprint 10.1: Comparative Dashboards (The Master Version)** {#blueprint-10.1:-comparative-dashboards-(the-master-version)}
+<a id="blueprint-10-1-comparative-dashboards"></a>
+
+### Blueprint 10.1: Comparative Dashboards (The Master Version)
 
 * **4-Panel Delta Architecture:** Comparative physics, pipeline volume, action delta, capital + SymLog revenue impact.
 * **Output:** `output/dashboards/delta/{SKU_ID}_dashboard.png`
 
 **Code:** [`mrp/viz/dashboards.py`](mrp/viz/dashboards.py) (`plot_delta_dashboard`, `generate_all_delta_dashboards`)
 
-### **Blueprint 10.2: The Enterprise Excel Exporter (Upgraded)** {#blueprint-10.2:-the-enterprise-excel-exporter-(upgraded)}
+<a id="blueprint-10-2-enterprise-excel-exporter"></a>
+
+### Blueprint 10.2: The Enterprise Excel Exporter (Upgraded)
 
 * **Time-Block Compression:** `compress_to_campaigns` merges consecutive same-direction monthly deltas.
 * **4-Tab Variance Workbook:** Executive Summary, Action Campaigns, Monthly Execution List, Raw Physics Baseline.
@@ -358,25 +385,33 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 5: Excel Shadow Ledger** {#phase-5:-excel-shadow-ledger}
+<a id="phase-5-excel-shadow-ledger"></a>
+
+## Phase 5: Excel Shadow Ledger
 
 *Objective: Multi-tab Excel system-of-record with Python-computed dead cells.*
 
-### **Blueprint 17: Alpha System of Record (Dead Cells)** {#blueprint-17:-alpha-system-of-record-(dead-cells)}
+<a id="blueprint-17-alpha-system-of-record"></a>
+
+### Blueprint 17: Alpha System of Record (Dead Cells)
 
 * **Analytical Engine:** `calculate_alpha_health` — capital commitment, health ratio, dead stock exposure.
 * **Horizontal Pivot:** 24-month grid written as integers with conditional PO formatting.
 
 **Code:** [`mrp/exports/excel/shadow_ledgers.py`](mrp/exports/excel/shadow_ledgers.py) (`build_alpha_shadow_ledger`)
 
-### **Blueprint 18: Beta System of Record (Day X)** {#blueprint-18:-beta-system-of-record-(day-x)}
+<a id="blueprint-18-beta-system-of-record"></a>
+
+### Blueprint 18: Beta System of Record (Day X)
 
 * **Chaos Router:** `build_chaos_map` — flags mutated month indices for tri-color demand highlighting.
 * **Beta Health Analytics:** Same dead-stock heuristic on Day X enriched matrix.
 
 **Code:** [`mrp/exports/excel/shadow_ledgers.py`](mrp/exports/excel/shadow_ledgers.py) (`build_beta_shadow_ledger`)
 
-### **Blueprint 19: The Delta System of Record (Shadow Ledger)** {#blueprint-19:-the-delta-system-of-record-(shadow-ledger)}
+<a id="blueprint-19-delta-system-of-record"></a>
+
+### Blueprint 19: The Delta System of Record (Shadow Ledger)
 
 * **Delta Analytics Engine:** `calculate_delta_math` — inner join, capital variance, inventory variance.
 * **5-Tab Master Audit:** Executive summary, S&OP variance grid, action campaigns, embedded delta PNGs, ERP master data.
@@ -385,11 +420,15 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 6: Pure Excel Code** {#phase-6:-pure-excel-code}
+<a id="phase-6-pure-excel-code"></a>
+
+## Phase 6: Pure Excel Code
 
 *Objective: Formula-driven Excel sandbox mirroring supply chain physics (optional `--fixtures` CLI flag).*
 
-### **Blueprint 12–16: Interactive Excel Sandbox** {#blueprint-12–16:-interactive-excel-sandbox}
+<a id="blueprint-12-16-interactive-excel-sandbox"></a>
+
+### Blueprint 12-16: Interactive Excel Sandbox
 
 | Blueprint | Purpose |
 |-----------|---------|
@@ -403,11 +442,15 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 7: Excel vs Python Isomorphism Testing** {#phase-7:-excel-vs-python-isomorphism-testing}
+<a id="phase-7-excel-python-isomorphism-testing"></a>
+
+## Phase 7: Excel vs Python Isomorphism Testing
 
 *Objective: Prove Excel UI mirrors Python RAM (optional `--semantic-test` after `--fixtures`).*
 
-### **Blueprint 20: CI/CD Test Fixture & Semantic Auditor** {#blueprint-20:-cicd-test-fixture-&-semantic-auditor}
+<a id="blueprint-20-cicd-test-fixture-semantic-auditor"></a>
+
+### Blueprint 20: CI/CD Test Fixture & Semantic Auditor
 
 * **Test Fixture Workbook:** `Enterprise_MRP_TEST_FIXTURE.xlsx` — Alpha + Beta + Delta + stacked S&OP grid.
 * **Semantic Auditor:** `run_semantic_shadow_test` — regex row matching, reconciliation patches, RAM vs Excel vector diff.
@@ -418,9 +461,13 @@ Translates raw arrays into business intelligence.
 
 ---
 
-# **Technical Documentation** {#technical-documentation}
+<a id="technical-documentation"></a>
 
-## **CLI & Pipeline Orchestration** {#cli-&-pipeline-orchestration}
+# Technical Documentation
+
+<a id="cli-pipeline-orchestration"></a>
+
+## CLI & Pipeline Orchestration
 
 **Module: Command-Line Interface**
 
@@ -440,9 +487,13 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 1: Engine Initialization & Baseline Generation** {#phase-1-technical}
+<a id="phase-1-technical"></a>
 
-### **Blueprint 1: Enterprise Data Generation** {#blueprint-1-technical}
+## Phase 1 — Technical
+
+<a id="blueprint-1-technical"></a>
+
+### Blueprint 1 — Technical: Enterprise Data Generation
 
 **Module 1: Master Data Dictionaries**
 
@@ -456,7 +507,9 @@ Translates raw arrays into business intelligence.
 * **Reasoning:** Absolute dates enable inner joins across Alpha/Beta after calendar tick and map exceptions to real financial periods.
 * **Code Location:** [`mrp/calendar.py`](mrp/calendar.py)
 
-### **Blueprint 2: Path-Dependent State Machine** {#blueprint-2-technical}
+<a id="blueprint-2-technical"></a>
+
+### Blueprint 2 — Technical: Path-Dependent State Machine
 
 **Core Supply Planning Mathematics**
 
@@ -474,7 +527,9 @@ Translates raw arrays into business intelligence.
 * **Action/Function:** Backward-schedule releases by LT; append capacity alerts when `receipt_qty > max_cap`.
 * **Reasoning:** Surfaces Magic Fixes (release_index < 0) and supplier bottleneck breaches for downstream tagging and dashboards.
 
-### **Blueprint 3: The Baseline Organizer** {#blueprint-3-technical}
+<a id="blueprint-3-technical"></a>
+
+### Blueprint 3 — Technical: Baseline Organizer
 
 **Module 1: The 4-State Exception Tagger**
 
@@ -490,7 +545,9 @@ Translates raw arrays into business intelligence.
 * **Action/Function:** `calculate_inventory_health`, `calculate_alpha_health`, `calculate_beta_health` in [`mrp/enrichment.py`](mrp/enrichment.py).
 * **Reasoning:** 6-month rolling forward demand classifies excess inventory as dead stock for C-suite liquidity reporting.
 
-### **Blueprint 4.2: Visual Dashboard** {#blueprint-4.2-technical}
+<a id="blueprint-4-2-technical"></a>
+
+### Blueprint 4.2 — Technical: Visual Dashboard
 
 **Module 1: Path Helpers**
 
@@ -504,9 +561,13 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Phase 2: Beta Engine** {#phase-2-technical}
+<a id="phase-2-technical"></a>
 
-### **Blueprint 5: State Inheritance** {#blueprint-5-technical}
+## Phase 2 — Technical
+
+<a id="blueprint-5-technical"></a>
+
+### Blueprint 5 — Technical: State Inheritance
 
 **Module 1: Calendar Tick**
 
@@ -522,23 +583,33 @@ Translates raw arrays into business intelligence.
 
 **Code Location:** [`mrp/state.py`](mrp/state.py)
 
-### **Blueprint 7: Beta Recalculation**
+<a id="blueprint-7-technical"></a>
+
+### Blueprint 7 — Technical: Beta Recalculation
 
 * **Action/Function:** `execute_beta_run(calendar_array, master_data, initial_state, demand_dict)` — portfolio loop calling same physics as Alpha with firmed receipts instead of open PO setup.
 
 ---
 
-## **Phase 3: Delta Engine** {#phase-3-technical}
+<a id="phase-3-technical"></a>
 
-### **Blueprint 8: Calendar Join**
+## Phase 3 — Technical
+
+<a id="blueprint-8-technical"></a>
+
+### Blueprint 8 — Technical: Calendar Join
 
 * **Action/Function:** `execute_calendar_join(df_alpha, df_beta)` — inner join; `Action_Delta = Total_Arrivals_Beta - Total_Arrivals_Alpha`.
 
-### **Blueprint 9: Executive Rollup**
+<a id="blueprint-9-technical"></a>
+
+### Blueprint 9 — Technical: Executive Rollup
 
 * **Action/Function:** `generate_executive_alerts(df_joined, master_data)` — filters, capital variance, grouped rollup with console executive monitor.
 
-### **Blueprint 10.2: Campaign Compression**
+<a id="blueprint-10-2-technical"></a>
+
+### Blueprint 10.2 — Technical: Campaign Compression
 
 * **Action/Function:** `compress_to_campaigns(df_exceptions)` — merges consecutive BUY/EXPEDITE or CANCEL/DELAY blocks.
 
@@ -546,7 +617,9 @@ Translates raw arrays into business intelligence.
 
 ---
 
-## **Output Artifacts Reference** {#output-artifacts-reference}
+<a id="output-artifacts-reference"></a>
+
+## Output Artifacts Reference
 
 Artifacts are written under **`output/`** (exports, dashboards, system of record, and fixtures).
 
@@ -580,7 +653,9 @@ Artifacts are written under **`output/`** (exports, dashboards, system of record
 
 ---
 
-## **Glossary 1: Supply Chain Physics (The MRP Business Logic)** {#glossary-1:-supply-chain-physics-(the-mrp-business-logic)}
+<a id="glossary-1-supply-chain-physics"></a>
+
+## Glossary 1: Supply Chain Physics (The MRP Business Logic)
 
 | Term | Definition |
 |------|------------|
@@ -602,7 +677,9 @@ Artifacts are written under **`output/`** (exports, dashboards, system of record
 
 ---
 
-## **Glossary 2: Excel Engine Functions (The Syntax Mechanics)** {#glossary-2:-excel-engine-functions-(the-syntax-mechanics)}
+<a id="glossary-2-excel-engine-functions"></a>
+
+## Glossary 2: Excel Engine Functions (The Syntax Mechanics)
 
 The interactive Excel sandbox ([`mrp/exports/excel/fixtures.py`](mrp/exports/excel/fixtures.py)) uses the same function vocabulary as the legacy Colab project:
 
@@ -619,26 +696,28 @@ The interactive Excel sandbox ([`mrp/exports/excel/fixtures.py`](mrp/exports/exc
 
 ---
 
-## **Architectural Transition: From Colab Notebook to Modular Pipeline** {#architectural-transition:-from-colab-notebook-to-modular-pipeline}
+<a id="architectural-transition"></a>
+
+## Architectural Transition: From Colab Notebook to Modular Pipeline
 
 The original project was developed in Google Colab as a top-to-bottom notebook ([`legacy/project_code.py`](legacy/project_code.py)). The refactored pipeline addresses the same **Colab Wall** limitations documented in the legacy architecture notes:
 
-### **Limitation 1: Stateful Contamination**
+### Limitation 1: Stateful Contamination
 
 * **Colab failure mode:** Duplicate `CHAOS_PAYLOAD` cells, stale RAM, ghost variables after partial re-runs.
 * **Refactor resolution:** Each CLI invocation starts fresh Python; `data/fixtures.py` holds a single canonical payload; no execution on import.
 
-### **Limitation 2: Split-Brain LLM Context**
+### Limitation 2: Split-Brain LLM Context
 
 * **Colab failure mode:** Excel generator and Python engine diverge when built in separate chat sessions.
 * **Refactor resolution:** Entire codebase indexed in Cursor; Excel fixtures and Python simulation live in one repo with shared fixtures.
 
-### **Limitation 3: Medium Wall (Excel vs Python)**
+### Limitation 3: Medium Wall (Excel vs Python)
 
 * **Colab failure mode:** OFFSET edge-of-grid errors vs infinite Python horizon.
 * **Refactor resolution:** Semantic auditor reconciliation patches preserved in [`fixtures.py`](mrp/exports/excel/fixtures.py); optional `--semantic-test` validates isomorphism after fixture generation.
 
-### **What Changed in the Refactor**
+### What Changed in the Refactor
 
 | Aspect | Colab notebook | Refactored project |
 |--------|----------------|-------------------|
