@@ -4,6 +4,7 @@
 
 ## Project Outline
 
+- [Related Notes](#related-notes)
 - [Project Outline](#project-outline)
 - [The Pipeline](#the-pipeline)
 - [Refactored Repository Architecture](#refactored-repository-architecture)
@@ -56,6 +57,16 @@
 - [Glossary 1: Supply Chain Physics (The MRP Business Logic)](#glossary-1-supply-chain-physics)
 - [Glossary 2: Excel Engine Functions (The Syntax Mechanics)](#glossary-2-excel-engine-functions)
 - [Architectural Transition: From Colab Notebook to Modular Pipeline](#architectural-transition)
+
+<a id="related-notes"></a>
+
+# Related Notes
+
+Conceptual context for this pipeline lives in the companion `notes` repo (open it alongside this repo in the Cursor multi-root workspace). These links resolve locally; they do not render on GitHub since the repos publish separately.
+
+- [notes/meta/Meta_Workflow.md](../notes/meta/Meta_Workflow.md) — canonical 0-4 Centaur meta-workflow.
+- [notes/meta/Layer4_TypeB_Auditing.md](../notes/meta/Layer4_TypeB_Auditing.md) — Type B auditing; conservation and state-machine invariants relevant to the Alpha/Beta/Delta timelines.
+- [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index (Layer 0-1 strategy).
 
 <a id="project-outline"></a>
 
