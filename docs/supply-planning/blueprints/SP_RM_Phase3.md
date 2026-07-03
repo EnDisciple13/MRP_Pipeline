@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase3.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-blueprints-SP_RM_Phase3
+type: blueprint
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Technical Blueprint: Phase 3 - Micro-Optimizer (Local MILP, 72-Hour Triage)
 
 ## I. Objective

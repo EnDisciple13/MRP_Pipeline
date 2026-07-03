@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase4.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-blueprints-SP_RM_Phase4
+type: blueprint
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Technical Blueprint: Phase 4 - Horizon Optimizer (Cumulative Lead Time)
 
 ## I. Objective

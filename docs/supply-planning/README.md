@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/README.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-README
+type: project_strategy
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Supply Planning Documentation
 
 Canonical supply-planning strategy docs for the MRP Pipeline. Mirrors are auto-synced into

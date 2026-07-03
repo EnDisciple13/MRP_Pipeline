@@ -1,8 +1,20 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-blueprints-SP_RM_Phase1
+type: blueprint
+status: draft
+dependencies:
+tags: []
+invariants:
+  - id: conservation-of-mass
+    statement: "Sum of supply plus initial inventory equals sum of demand plus ending inventory over horizon T"
+  - id: non-negative-inventory
+    statement: "Physical inventory I_t and planned receipts PR_t must be non-negative for all t"
+  - id: lead-time-offset
+    statement: "If no supply in transit for lead time L, planned receipts for days 0 through L-1 must be zero"
+---
 # Technical Blueprint: Phase 1 - Sandbox Simulator (Local MRP Engine)
-
-## I. Objective
 
 **CS / English:** Build a standalone script that runs the deterministic netting loop ($I_t = PAB_{t-1} + S_t - D_t$) and applies lead-time offsets for a specific subset of parts. This is the foundation — you cannot optimize a cost function if netting math is wrong. Unlocks immediate offline scenario modeling (e.g., which hospitals stock out when a supplier is 7 days late).
 

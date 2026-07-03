@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-frameworks-Two_Dials_Framework
+type: framework
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Two Dials Framework
 
 Enterprise supply chain architecture: **Scale Dial** (scope) and **Time Dial** (horizon) govern when to use macro continuous optimization vs micro combinatorial triage. Includes the peace/war closed-loop workflow between global ERP and local Python digital twins.

@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-roadmaps-MRP_V2_Roadmap
+type: roadmap
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # MRP V2 Roadmap
 
 Project strategy for the next evolution of the MRP engine: from single-echelon deterministic baseline to stochastic, multi-echelon supply planning with cost optimization.

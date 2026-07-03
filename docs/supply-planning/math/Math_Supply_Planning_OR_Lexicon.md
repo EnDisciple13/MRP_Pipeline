@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: math-supply-planning-or-lexicon
+type: math_domain
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Supply Planning OR Lexicon
 
 Formal OR foundations shared across supply-planning projects. Bridges Operations Research vocabulary and supply chain terminology.

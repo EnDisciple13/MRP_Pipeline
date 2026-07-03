@@ -1,5 +1,17 @@
 <!-- MIRROR: auto-synced from notes/math/supply-planning/Math_Safety_Stock_Derivation.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: math-safety-stock-derivation
+type: math_domain
+status: draft
+dependencies:
+tags: []
+invariants:
+  - id: rop-formula
+    statement: "Reorder point ROP = E[DDLT] + SS for valid inputs"
+  - id: ss-formula
+    statement: "Safety stock SS = Z x sigma_DDLT given valid demand and lead-time distributions"
+---
 # Safety Stock Derivation
 
 Formal derivation of Demand During Lead Time (DDLT), safety stock ($SS$), and reorder point ($ROP$) from first principles. This note supplies the **Layer 1** probability model for supply-planning engines such as the [MRP Pipeline](../../../../Notes/projects/mrp/README.md); the [Alpha/Beta/Delta](../../../../Notes/projects/mrp/README.md) proposition isolates variance in the simulation.

@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/roadmaps/Supply_Planning_Tool_Roadmap.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-roadmaps-Supply_Planning_Tool_Roadmap
+type: roadmap
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Supply Planning Tool Roadmap
 
 Phased narrative for building standalone Python supply-planning tools (the Speedboat layer). Implementation specs and Layer 4 invariants live in [blueprints/](../../../../Notes/projects/mrp/supply-planning/roadmaps/blueprints).

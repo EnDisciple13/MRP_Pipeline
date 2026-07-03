@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/context/SAP_Enterprise_Context.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-context-SAP_Enterprise_Context
+type: context
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # SAP Enterprise Context
 
 Enterprise instantiation of [Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — SAP IBP/PP/MM as the global dictator in the peace/war closed loop. Reference mapping between enterprise modules and the local MRP simulator architecture.

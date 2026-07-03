@@ -1,5 +1,17 @@
 <!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: projects-mrp-supply-planning-architecture-MRP_State_Machine_Architecture
+type: architecture
+status: draft
+dependencies:
+tags: []
+invariants:
+  - id: mandatory-beta
+    statement: "MRP pipeline transitions Alpha -> Beta -> Delta; Beta recalculation is mandatory before Delta comparison"
+  - id: non-negative-lead-time
+    statement: "Lead time L must be non-negative for all SKUs"
+---
 # MRP State Machine Architecture
 
 Layer 1 architecture note for the [MRP Pipeline](../../../../Notes/projects/mrp/README.md): why enterprise MRP is a path-dependent sequential state machine, not a vectorized calculator.

@@ -1,5 +1,13 @@
 <!-- MIRROR: auto-synced from notes/math/supply-planning/Math_Advanced_OR_Addendum.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
+---
+id: math-advanced-or-addendum
+type: math_domain
+status: draft
+dependencies:
+tags: []
+invariants: []
+---
 # Advanced OR Addendum (Supply Planning)
 
 Formal operations-research theory for supply-planning architecture: sheaf-theoretic constraint topology, state-space trees, modern OR solution methods, and the category-theory ↔ linear-algebra equivalence.
