@@ -72,13 +72,14 @@ Conceptual context for this pipeline lives in the companion `notes` repo (open i
 - [notes/meta/AI_Deterministic_Delegation.md](../notes/meta/AI_Deterministic_Delegation.md) — architecture-first workflow for building deterministic MRP micro-engines.
 - [docs/supply-planning/README.md](docs/supply-planning/README.md) — strategy docs (mirror of Notes supply-planning hub).
 - [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index.
-- [notes/projects/mrp/supply-planning/MRP_State_Machine_Architecture.md](../notes/projects/mrp/supply-planning/MRP_State_Machine_Architecture.md) — sequential state machine vs vectorized trap (Blueprint 2 foundation).
-- [notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md) — V2 engine evolution: multi-echelon, cost optimization, dynamic SS.
-- [notes/projects/mrp/supply-planning/Two_Dials_Framework.md](../notes/projects/mrp/supply-planning/Two_Dials_Framework.md) — macro/micro decoupling and peace/war closed-loop workflow.
-- [notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md) — phased Speedboat tool build with Layer 4 invariants.
-- [notes/projects/mrp/supply-planning/SAP_Enterprise_Context.md](../notes/projects/mrp/supply-planning/SAP_Enterprise_Context.md) — SAP IBP/PP/MM mapping (optional enterprise reference).
-- [notes/math/Math_Safety_Stock_Derivation.md](../notes/math/Math_Safety_Stock_Derivation.md) — DDLT, safety stock, infinity clash.
-- [notes/math/Math_Supply_Planning_OR_Lexicon.md](../notes/math/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP foundations.
+- [notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md](../notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md) — sequential state machine vs vectorized trap (Blueprint 2 foundation).
+- [notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md) — V2 engine evolution: multi-echelon, cost optimization, dynamic SS.
+- [notes/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md](../notes/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md) — macro/micro decoupling and peace/war closed-loop workflow.
+- [notes/projects/mrp/supply-planning/roadmaps/Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/roadmaps/Supply_Planning_Tool_Roadmap.md) — battleship vs speedboats narrative; links to phased blueprints.
+- [notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md](../notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md) — Speedboat phase blueprints with Layer 4 invariants.
+- [notes/projects/mrp/supply-planning/context/SAP_Enterprise_Context.md](../notes/projects/mrp/supply-planning/context/SAP_Enterprise_Context.md) — SAP IBP/PP/MM mapping (optional enterprise reference).
+- [notes/math/supply-planning/Math_Safety_Stock_Derivation.md](../notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — DDLT, safety stock, infinity clash.
+- [notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP foundations.
 
 <a id="documentation-map"></a>
 
@@ -88,9 +89,9 @@ Three strategy documents use overlapping vocabulary but describe different scope
 
 **Pipeline Phases 1–7** (this document) describe the shipped Alpha → Beta → Delta simulation: baseline generation, chaos recalculation, variance rollups, Excel shadow ledgers, and Python–Excel isomorphism testing. This is what `main.py` runs today.
 
-**Speedboat Phases 1–5** ([Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md)) describe standalone Python supply-planning tools built beside the pipeline: sandbox MRP → BOM DAG tracer → micro/horizon/portfolio MILP optimizers. Most of this is future work.
+**Speedboat Phases 1–5** ([SP_RM_Phase1.md](../notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md) … [Phase5](../notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase5.md); narrative in [Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/roadmaps/Supply_Planning_Tool_Roadmap.md)) describe standalone Python supply-planning tools built beside the pipeline: sandbox MRP → BOM DAG tracer → micro/horizon/portfolio MILP optimizers. Most of this is future work.
 
-**MRP V2** ([MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md)) describes forward-looking engine features (multi-echelon BOM explosion, dynamic safety stock, cost optimization, capacity underutilization). These extend Blueprint 2 physics but are not fully implemented.
+**MRP V2** ([MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md)) describes forward-looking engine features (multi-echelon BOM explosion, dynamic safety stock, cost optimization, capacity underutilization). These extend Blueprint 2 physics but are not fully implemented.
 
 **Rough mapping:** Pipeline Phase 1 / Blueprint 2 ≈ Speedboat Phase 1 (sequential sandbox MRP). Speedboat Phases 2–5 and most V2 items are not yet in the codebase.
 
@@ -98,7 +99,7 @@ Three strategy documents use overlapping vocabulary but describe different scope
 
 ### Layer 4 validation targets
 
-Validation backlog from [Supply Planning Tool Roadmap](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md). Not yet enforced in `mrp_pipeline` tests/schemas.
+Validation backlog from [SP_RM blueprints](../notes/projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md). Not yet enforced in `mrp_pipeline` tests/schemas.
 
 | Phase | Invariants to enforce in `mrp_pipeline` tests/schemas |
 |-------|------------------------------------------------------|
@@ -108,7 +109,7 @@ Validation backlog from [Supply Planning Tool Roadmap](../notes/projects/mrp/sup
 | 4 — Horizon MILP | Terminal state $\ge SS$; frozen-zone POR lock |
 | 5 — Portfolio MILP | Mutually exclusive setup binaries; setup triangle inequality |
 
-When dynamic safety stock lands, also enforce $ROP = E[DDLT] + SS$ per [Math_Safety_Stock_Derivation.md](../notes/math/Math_Safety_Stock_Derivation.md).
+When dynamic safety stock lands, also enforce $ROP = E[DDLT] + SS$ per [Math_Safety_Stock_Derivation.md](../notes/math/supply-planning/Math_Safety_Stock_Derivation.md).
 
 <a id="project-outline"></a>
 

@@ -1,4 +1,4 @@
-<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/Two_Dials_Framework.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
+<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
 # Two Dials Framework
 
@@ -6,11 +6,11 @@ Enterprise supply chain architecture: **Scale Dial** (scope) and **Time Dial** (
 
 ## Related Notes
 
-- [MRP_V2_Roadmap.md](MRP_V2_Roadmap.md) — cost optimization objective that motivated macro/micro decoupling.
-- [Supply_Planning_Tool_Roadmap.md](Supply_Planning_Tool_Roadmap.md) — phased Speedboat implementation.
-- [SAP_Enterprise_Context.md](SAP_Enterprise_Context.md) — SAP IBP/PP/MM as the global dictator.
-- [../../../math/Math_Supply_Planning_OR_Lexicon.md](../../../Notes/math/Math_Supply_Planning_OR_Lexicon.md) — Z_macro / Z_micro formulations.
-- [../../../math/Math_Safety_Stock_Derivation.md](../../../Notes/math/Math_Safety_Stock_Derivation.md) — infinity clash and optimizer slack variables.
+- [../roadmaps/MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — cost optimization objective that motivated macro/micro decoupling.
+- [../roadmaps/Supply_Planning_Tool_Roadmap.md](../roadmaps/Supply_Planning_Tool_Roadmap.md) — phased Speedboat implementation.
+- [../context/SAP_Enterprise_Context.md](../context/SAP_Enterprise_Context.md) — SAP IBP/PP/MM as the global dictator (optional enterprise reference).
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — Z_macro / Z_micro formulations.
+- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — infinity clash and optimizer slack variables.
 
 ---
 
@@ -113,7 +113,7 @@ By building both a local MRP and a local MILP, you create a **Digital Twin** of 
 
 ## **Part V: The Mathematics of Triage (Safety Stock vs. Shortage)**
 
-See [Math_Safety_Stock_Derivation.md](../../../Notes/math/Math_Safety_Stock_Derivation.md) (Part 8) for the formal treatment of the **Infinity Clash**, slack variable $V_t$, and stratified penalties ($C_{violation}$ vs $C_{shortage}$).
+See [Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) (Part 8) for the formal treatment of the **Infinity Clash**, slack variable $V_t$, and stratified penalties ($C_{violation}$ vs $C_{shortage}$).
 
 **Operational summary:** In forecasted demand (Peace Time), $SS_t$ is a rigid buffer target with no near-infinite shortage penalty on statistical tails. In firmed demand / operational chaos (War Time), the solver compares draining the statistical buffer ($V_t$, moderate $C_{violation}$) against missing a physical order (near-infinite $C_{shortage}$) and autonomously sacrifices the buffer to fulfill the firm constraint.
 

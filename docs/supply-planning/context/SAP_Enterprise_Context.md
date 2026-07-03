@@ -1,14 +1,14 @@
-<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/SAP_Enterprise_Context.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
+<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/context/SAP_Enterprise_Context.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
 # SAP Enterprise Context
 
-Reference mapping between SAP IBP/PP/MM enterprise modules and the local MRP simulator architecture.
+Enterprise instantiation of [Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — SAP IBP/PP/MM as the global dictator in the peace/war closed loop. Reference mapping between enterprise modules and the local MRP simulator architecture.
 
 ## Related Notes
 
-- [MRP_State_Machine_Architecture.md](MRP_State_Machine_Architecture.md) — local sequential MRP engine.
-- [Two_Dials_Framework.md](Two_Dials_Framework.md) — global SAP (dictator) vs local Python (scout/speedboat).
-- [MRP_V2_Roadmap.md](MRP_V2_Roadmap.md) — V2 feature gaps vs enterprise systems.
+- [../architecture/MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — local sequential MRP engine.
+- [../frameworks/Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — canonical closed-loop framework (global SAP vs local Python).
+- [../roadmaps/MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — V2 feature gaps vs enterprise systems.
 
 ---
 

@@ -1,14 +1,15 @@
-<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/MRP_State_Machine_Architecture.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
+<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
 # MRP State Machine Architecture
 
-Layer 1 architecture note for the [MRP Pipeline](../../../Notes/projects/mrp/README.md): why enterprise MRP is a path-dependent sequential state machine, not a vectorized calculator.
+Layer 1 architecture note for the [MRP Pipeline](../../../../Notes/projects/mrp/README.md): why enterprise MRP is a path-dependent sequential state machine, not a vectorized calculator.
 
 ## Related Notes
 
-- [MRP_V2_Roadmap.md](MRP_V2_Roadmap.md) — next engine evolution (multi-echelon, cost optimization).
-- [../../../math/Math_Supply_Planning_OR_Lexicon.md](../../../Notes/math/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary and state/control equations.
-- [../../../meta/Layer4_TypeB_Auditing.md](../../../Notes/meta/Layer4_TypeB_Auditing.md) — conservation and state-machine invariants.
+- [../roadmaps/MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — next engine evolution (multi-echelon, cost optimization).
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary and state/control equations.
+- [../../../meta/Layer4_TypeB_Auditing.md](../../../../Notes/projects/meta/Layer4_TypeB_Auditing.md) — conservation and state-machine invariants.
+- [../blueprints/SP_RM_Phase1.md](../blueprints/SP_RM_Phase1.md) — Phase 1 sandbox blueprint (prerequisite).
 
 ---
 

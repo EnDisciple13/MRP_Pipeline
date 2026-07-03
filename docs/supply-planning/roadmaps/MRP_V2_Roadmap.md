@@ -1,4 +1,4 @@
-<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
+<!-- MIRROR: auto-synced from notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md - do not edit directly. Edit the canonical file in the notes repo and run scripts/sync_project_docs.py -->
 
 # MRP V2 Roadmap
 
@@ -6,11 +6,11 @@ Project strategy for the next evolution of the MRP engine: from single-echelon d
 
 ## Related Notes
 
-- [MRP_State_Machine_Architecture.md](MRP_State_Machine_Architecture.md) — sequential state-machine foundation.
-- [Two_Dials_Framework.md](Two_Dials_Framework.md) — macro/micro objective decoupling and peace/war workflow.
+- [../architecture/MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — sequential state-machine foundation.
+- [../frameworks/Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — macro/micro objective decoupling and peace/war workflow.
 - [Supply_Planning_Tool_Roadmap.md](Supply_Planning_Tool_Roadmap.md) — phased Python tool build order.
-- [../../../math/Math_Safety_Stock_Derivation.md](../../../Notes/math/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP derivation (reference, do not duplicate).
-- [../../../math/Math_Supply_Planning_OR_Lexicon.md](../../../Notes/math/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP objective.
+- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP derivation (reference, do not duplicate).
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP objective.
 
 ---
 
@@ -106,87 +106,12 @@ The engine uses a modified Economic Order Quantity (EOQ) logic to evaluate the T
    * *Condition:* Find the specific component where $I\_t \< 0$ (a stockout).  
    * *Output:* The algorithm flags the specific raw material as the Root Cause of the Finished Good's failure.
 
-**The Interrelation:** This completely closes the loop of the entire architecture. An exogenous shock (Blueprint 6 Chaos Injector) hits a raw material's lead time. The Multi-Echelon Matrix (Section 1\) mathematically forces the Finished Good to fail. The Plan Attainment metric (Section 5\) drops, and the Pegging Algorithm traces the financial Revenue at Risk exactly back to the delayed raw material, generating the JSON payload for the AI agent to write the supplier email.
+**The Interrelation:** This completely closes the loop of the entire architecture. An exogenous shock (Blueprint 6 Chaos Injector) hits a raw material's lead time. The Multi-Echelon Matrix (Section 1) mathematically forces the Finished Good to fail. The Plan Attainment metric (Section 5) drops, and the Pegging Algorithm traces the financial Revenue at Risk exactly back to the delayed raw material, generating the JSON payload for the AI agent to write the supplier email.
 
-# **Master Reference: The Supply Chain Optimization Engine**
+## Formal optimization math (do not duplicate here)
 
-## **1\. The Objective Function (What We Are Minimizing)**
+Objective function, hard constraints, trade-offs, and MILP theory are canonical in:
 
-In practice, addressing "cost inefficiencies" means writing an algorithm to find the lowest possible Total Cost ($Z$) across the entire 24-month horizon. The engine evaluates every decision by summing these five competing financial variables.
-
-**The Master Equation:**
-
-$$\\text{Minimize } Z \= \\sum\_{t=1}^{T} \\left\[ C\_{hold, t} \+ C\_{setup, t} \+ C\_{material, t} \+ C\_{shortage, t} \+ C\_{underutil, t} \\right\]$$
-
-### **The Variable Breakdown & Math:**
-
-**A. Holding Cost ($C\_{hold}$)**
-
-* **What it is:** The cost of tying up capital in inventory, plus warehouse rent, insurance, and obsolescence risk.  
-* **The Math:** $C\_{hold, t} \= I\_t \\times Unit\\\_Cost \\times h$  
-  *(Where $I\_t$ is ending inventory and $h$ is the annual holding rate percentage, e.g., 0.15).*  
-* **Engine Pressure:** Pushes the engine to order as little as possible, driving inventory toward zero.
-
-**B. Setup / Ordering Cost ($C\_{setup}$)**
-
-* **What it is:** The fixed financial penalty of executing a purchase order or forcing a factory to switch its assembly line.  
-* **The Math:** $C\_{setup, t} \= S \\times Y\_t$  
-  *(Where $S$ is the fixed setup cost, and $Y\_t$ is a binary variable \[0 or 1\] indicating if an order $PR\_t$ was placed).*  
-* **Engine Pressure:** Pushes the engine to order massive, infrequent bulk batches to avoid paying the fixed fee multiple times.
-
-**C. Material Cost & Price Breaks ($C\_{material}$)**
-
-* **What it is:** The actual cost of the units, accounting for step-function volume discounts.  
-* **The Math:** $C\_{material, t} \= PR\_t \\times P(PR\_t)$  
-  *(Where $P(PR\_t)$ is a step-function returning a cheaper price if $PR\_t$ crosses a threshold).*  
-* **Engine Pressure:** Pushes the engine to artificially inflate order quantities just enough to trigger the next price discount.
-
-**D. Shortage & Risk Penalty ($C\_{shortage}$)**
-
-* **What it is:** The financial cost of stocking out (Lost Revenue, expedited shipping fees, contractual penalties).  
-* **The Math:** $C\_{shortage, t} \= \\max(0, \\: D\_t \- I\_t) \\times Penalty\\\_Rate$  
-* **Engine Pressure:** Pushes the engine to hold high safety stock and order early to ensure zero missed sales.
-
-**E. Supplier Underutilization Penalty ($C\_{underutil}$)**
-
-* **What it is:** The cost of breaking a contract with a supplier who requires a minimum monthly order volume to keep their factory open for you.  
-* **The Math:** $C\_{underutil, t} \= \\max(0, \\: Min\\\_Cap \- PR\_t) \\times Underutil\\\_Penalty$  
-* **Engine Pressure:** Pushes the engine to order inventory even when the demand forecast mathematically says you do not need it.
-
-## **2\. The Hard Constraints (The Rules of Reality)**
-
-The engine wants to drive $Z$ to zero, but it is bounded by the physical laws of the supply chain. If an optimization path violates any of these inequalities, the MILP solver rejects the path.
-
-1. **Inventory Balance Law:** $I\_t \= I\_{t-1} \+ SR\_t \+ PR\_t \- D\_t$  
-2. **Supplier Maximum Capacity:** $PR\_t \\le Max\\\_Cap\_t$  
-3. **Warehouse Volume Capacity:** $\\sum\_{all} (I\_t \\times v) \\le W\_{max}$ *(Where $v$ is unit volume)*  
-4. **Non-Negativity Constraint:** $I\_t \\ge 0$ and $PR\_t \\ge 0$
-
-## **3\. The Interrelationships (The Trade-Offs)**
-
-When analyzing data to recommend actions (per the Stryker JD), you are constantly managing the tension between the variables in the objective function. Pulling one lever inevitably breaks another.
-
-* **Underutilization vs. Holding Cost (JD Bullet 2):** If you order extra units to satisfy a supplier's minimum capacity requirement ($C\_{underutil}$ drops), your ending inventory spikes, driving up your Holding Cost ($C\_{hold}$) and risking a breach of your warehouse capacity limit ($W\_{max}$).  
-* **Target Inventory vs. Setup Costs (JD Bullet 4):** If you set your dynamic Target Inventory too lean to save on Holding Cost, the system will execute tiny orders every single week, causing your fixed Setup Costs ($C\_{setup}$) to explode.  
-* **Price Breaks vs. Obsolescence:** If you order 1,000 units instead of 200 to trigger a 20% price discount ($C\_{material}$ drops), you tie up cash. If that product enters a Phase-Out cycle before you sell the 1,000 units, you incur a massive write-off penalty.
-
-## **4\. The Theory Behind MILP (Mixed-Integer Linear Programming)**
-
-When asked how you calculate an efficient path to resolve these competing variables, you must explain why standard calculus fails and how an MILP solver navigates the math.
-
-**Why Not Calculus?**
-
-Calculus (like Gradient Descent) requires a continuous, smooth mathematical surface so you can find the derivative and follow the slope to the bottom. Supply chains are **discrete** and **discontinuous**.
-
-* You cannot order 2.7 pallets (Integer constraint).  
-* Price breaks happen instantly at unit 500 (Discontinuous step-function).  
-* Because the mathematical surface is full of jagged cliffs and dead ends, a standard gradient calculation becomes undefined or gets permanently trapped in a false local minimum.
-
-**How MILP Solves It:**
-
-Instead of brute-forcing millions of combinations, MILP uses geometric boundaries and tree logic:
-
-1. **Continuous Relaxation (The Simplex Method):** The solver temporarily removes the integer rules (pretending you *can* order 2.7 pallets). This turns the problem into a smooth, multi-dimensional geometric shape called a convex polytope. The algorithm glides along the outer vertices of this shape to instantly find the mathematical minimum cost.  
-   1. Note that this gliding cannot be done on a lattice of points, and hence we introduce edges.  
-2. **Branch and Bound:** Once it finds the relaxed minimum (e.g., 2.7 pallets), it branches the universe into two physical realities: one where you order $\\le 2$ pallets, and one where you order $\\ge 3$ pallets.  
-3. **Pruning the Tree:** It evaluates these branches. If the math proves that the $\\le 2$ branch immediately violates the Shortage Penalty, the algorithm "prunes" (deletes) that entire branch of the decision tree without testing the thousands of sub-combinations inside it. It zeroes in on the absolute lowest integer cost purely through the process of elimination.
+- [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — master equation $Z$, state/control variables, inventory balance
+- [Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP and infinity clash
+- [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) — Bellman equation, MPC, portfolio disaggregation
