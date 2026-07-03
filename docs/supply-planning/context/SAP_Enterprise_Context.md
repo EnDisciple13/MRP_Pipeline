@@ -43,10 +43,10 @@ Before tracing operational chaos, we must map how the master tables relate to ea
 | Operational Layer | Core Business Purpose | SAP Module | Your Simulator Parallel |
 | :---- | :---- | :---- | :---- |
 | **The Long-Term Forecast** | Establishes the 24-month horizon pull; handles "What-If" market scenarios. | **SAP IBP** (Demand & S\&OP) | DEMAND array payload & Phase 2 Chaos Scenarios. |
-| **The Scheduling Logic** | Executes sequential chronological balancing and backward scheduling rules. | **SAP PP** (MRP / Net Requirements) | Blueprint 2: Path-Dependent 4-Step State Machine. |
+| **The Scheduling Logic** | Executes sequential chronological balancing and backward scheduling rules. | **SAP PP** (MRP / Net Requirements) | [SP_RM_Phase1](../../../../Notes/projects/mrp/blueprints/SP_RM_Phase1.md) — Sandbox MRP / sequential state machine. |
 | **The Master Constraints** | Stores localized vendor capabilities, lead times, lot-sizing, and pricing tiers. | **SAP MM** (Material Master / Purchase Info Record) | dict\_master\_data schema. |
 | **The Transaction Ledger** | Manages live warehouse on-hand stock and legally binding receipts on the water. | **SAP MM** (Inventory / Purchasing) | dict\_initial\_state & Lead-Time Fence arrays. |
-| **The Exception Monitor** | Isolates variances, calculates financial risk, and rollups actions into campaigns. | **SAP IBP** (Control Tower) | Phase 3 Comparative Delta Engine & Time-Block Compression. |
+| **The Exception Monitor** | Isolates variances, calculates financial risk, and rollups actions into campaigns. | **SAP IBP** (Control Tower) | [SP_RM_Phase3](../../../../Notes/projects/mrp/blueprints/SP_RM_Phase3.md) — Micro MILP comparative delta engine (Alpha/Beta/Delta architecture per [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md)). |
 
 ## **2\. The Multi-Tier Ripple Effect (Operational Scenarios)**
 

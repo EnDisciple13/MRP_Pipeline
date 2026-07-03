@@ -76,7 +76,7 @@ $$Z = \sum_{t=1}^{T} \Big[ \underbrace{C_{hold}(x_t) + C_{shortage}(x_t)}_{\text
 
 Every time you choose a control variable $u_t$, you do not just incur a penalty today; you permanently alter the feasible geometry of tomorrow.
 
-By choosing $u_t$, the State Transition Function ($x_{t+1} = x_t + u_t - D_t$) collapses a branch of the decision tree, defining a brand new starting state for $t+1$. This creates a massive, branching fractal of possible realities ("worldlines") spanning the 24-month horizon.
+By choosing $u_t$, the State Transition Function ($x_{t+1} = x_t + S_t + u_t - D_t$; see [Math_Supply_Planning_OR_Lexicon.md](Math_Supply_Planning_OR_Lexicon.md) for $R_t = S_t + u_t$) collapses a branch of the decision tree, defining a brand new starting state for $t+1$. This creates a massive, branching fractal of possible realities ("worldlines") spanning the 24-month horizon.
 
 ### The Bellman Equation (Greedy vs. Global)
 

@@ -34,7 +34,7 @@ Enterprise Resource Planning (ERP) systems like SAP and Advanced Planning System
 ### 1. The Execution Engine (Standard MRP)
 
 * **The Math:** A deterministic, discrete-time state machine using a Greedy Heuristic.
-* **The Mechanism:** Topologically sorts the BOM as a DAG. Evaluates one part at a time, top-down. State transition $I_t = I_{t-1} + u_t - D_t$; triggers planned receipt the moment safety stock is violated.
+* **The Mechanism:** Topologically sorts the BOM as a DAG. Evaluates one part at a time, top-down. State transition $I_t = I_{t-1} + S_t + u_t - D_t$ (equivalently $I_t = I_{t-1} + R_t - D_t$ with $R_t = S_t + u_t$ per [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md)); triggers planned receipt the moment safety stock is violated.
 * **The Flaw:** A **Presheaf** — optimizes parts in isolation, blind to shared constraints.
 
 ### 2. The Horizon Optimizer (Cumulative Lead Time)

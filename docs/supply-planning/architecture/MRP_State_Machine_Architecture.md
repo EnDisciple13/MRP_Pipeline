@@ -144,9 +144,9 @@ Let's break down these four concepts with concrete examples to show exactly how 
 * **The Reasoning:** When the for loop is sitting in Month 9, it only calculates $I\_9 \= I\_8 \+ R\_9 \- D\_9$. It sees a demand of 10\. It calculates a steady state. **It does not look ahead to Month 12 to see the 5,000.** It isn’t until the engine physically ticks over to $t \= 12$ that the equation encounters the massive \-5,000 deficit.  
 * **Forward Simulation & Backward Scheduling:** The mathematical engine cannot arbitrarily "look ahead" to solve future problems because future inventory states are entirely path-dependent($I\_t$ depends on $I\_{t-1}$) . To look ahead, the engine must systematically walk the timeline forward (putting itself in the future) to discover the true deficit. Once the deficit is found, it uses lead-time data to "look in hindsight" and schedule the required order releases in the past (Backward Scheduling). 
 
-### **2\. The Recursive Nightmare**
+### **2\. The Recursive Nightmare (Anti-pattern example)**
 
-*The engine must apply a fix and immediately move on. If the system tried to step backward in time... the servers would crash in an infinite loop.*
+*The engine must apply a fix and immediately move on. If the system tried to step backward in time... the servers would crash in an infinite loop. **This section illustrates why engines must not step backward in time** — distinct from forward lead-time offset (backward scheduling), which walks the timeline forward first, then offsets releases.*
 
 * **The Example:** Let's stick to the hospital contract. In Month 12, the engine hits a deficit of 5,000. It checks the master data and sees the 3-month lead time. What if we programmed the engine to physically jump backward to Month 9 and place the PO there so it arrived on time?  
 * **The Reasoning:** If the engine rewrites history by injecting a 5,000-unit PO into Month 9, the closed state of Month 9 is permanently altered.  

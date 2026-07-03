@@ -9,9 +9,9 @@ dependencies:
 tags: []
 invariants:
   - id: inventory-balance
-    statement: "Inventory balance I_t = I_{t-1} + R_t - D_t holds for all periods t"
+    statement: "I_t = I_{t-1} + R_t - D_t; decomposed R_t = S_t + u_t when scheduled and planned receipts are tracked separately"
   - id: non-negative-controls
-    statement: "Control variables receipts R_t and planned orders must be non-negative"
+    statement: "S_t, u_t, and R_t must be non-negative; u_t is the control variable"
 ---
 # Supply Planning OR Lexicon
 
@@ -83,6 +83,21 @@ $$\\text{Internal Consumption} \= BR$$
 ## **Part 3: The Temporal Engine (State & Control)**
 
 This is the core physics engine of the daily supply chain. It operates as a discrete-time dynamical system governed by a Feedback Control Policy (specifically, a Bang-Bang Controller).
+
+### Receipt notation
+
+When the distinction between predetermined and algorithmic supply matters, decompose total receipts:
+
+- **$R_t$** — total receipts (aggregate inflow at period $t$)
+- **$S_t$** — scheduled receipts (predetermined; in-transit POs, firm arrivals)
+- **$u_t$** / **$PR_t$** — planned receipts (control variable; MRP intervention)
+
+**Identity:** $R_t = S_t + u_t$ when scheduled and planned receipts are tracked separately.
+
+**When to use which form:**
+
+- **Aggregate:** $I_t = I_{t-1} + R_t - D_t$ — sufficient when only total inflow matters.
+- **Decomposed:** $I_t = I_{t-1} + S_t + u_t - D_t$ — required when netting logic must separate predetermined from controllable supply.
 
 **1\. The State Transition Function (The Physics Equation)**
 

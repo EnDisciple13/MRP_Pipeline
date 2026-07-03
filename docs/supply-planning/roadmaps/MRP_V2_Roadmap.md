@@ -64,13 +64,14 @@ The demand for a raw material ($D\_{dep, t}$) is strictly dictated by the *Relea
 You must calculate the standard deviation of historical demand ($\\sigma\_D$) and apply a Z-score ($Z$) representing the desired Service Level (e.g., 95% \= 1.645).
 
 1. **Dynamic Safety Stock Vector:**  
-2. $$SS\_t \= Z \\times \\sqrt{LT} \\times \\sigma\_D$$  
-3. **Total Target Inventory (The New Floor):**  
-4. The engine must hold enough stock to survive variability ($SS\_t$) PLUS the average units consumed between shipments (Cycle Stock, which is exactly $\\frac{MOQ}{2}$).  
-5. $$TTI\_t \= SS\_t \+ \\frac{MOQ}{2}$$  
-6. **The Unhealed Balance Recalculation:**  
-7. Your original engine triggered an order when $I\_t \< SS$. The new engine calculates a continuous Net Requirement ($NR\_t$):  
-8. $$NR\_t \= \\max(0, D\_t \+ TTI\_t \- I\_{t-1} \- SR\_t)$$
+2. $$SS\_t \= Z \\times \\sigma\_{DDLT}$$ (canonical form per [Math_Safety_Stock_Derivation.md](../math/Math_Safety_Stock_Derivation.md); expanded $SS = Z \\times \\sqrt{\\mu\_L \\sigma\_D^2 + \\mu\_D^2 \\sigma\_L^2}$ when lead-time variability is non-negligible)  
+3. > **Simplified approximation:** $SS\_t \\approx Z \\times \\sqrt{LT} \\times \\sigma\_D$ assumes constant lead time and demand-only variability — valid only when $\\sigma\_L \\approx 0$.  
+4. **Total Target Inventory (The New Floor):**  
+5. The engine must hold enough stock to survive variability ($SS\_t$) PLUS the average units consumed between shipments (Cycle Stock, which is exactly $\\frac{MOQ}{2}$).  
+6. $$TTI\_t \= SS\_t \+ \\frac{MOQ}{2}$$ <!-- heuristic: not formally derived -->  
+7. **The Unhealed Balance Recalculation:**  
+8. Your original engine triggered an order when $I\_t \< SS$. The new engine calculates a continuous Net Requirement ($NR\_t$):  
+9. $$NR\_t \= \\max(0, D\_t \+ TTI\_t \- I\_{t-1} \- SR\_t)$$
 
 **The Interrelation:** This directly impacts your **Financial Scorecard**. Because $TTI\_t$ fluctuates, the amount of Working Capital tied up ($Cap\_{hold} \= I\_t \\times Unit\\\_Cost$) is no longer a flat line; it breathes with the market. High-volatility SKUs will automatically hoard more cash.
 
