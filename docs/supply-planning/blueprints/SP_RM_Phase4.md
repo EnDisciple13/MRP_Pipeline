@@ -6,7 +6,7 @@
 
 **CS / English:** Expand Phase 3 MILP by extending $T$ to the product line's full cumulative lead time (e.g., 180 days). Graduate to dynamic programming — evaluate the long-term cost integral and understand how Month 1 decisions force state-space collapse in Month 6. Run offline to identify where SAP is about to make a fatal long-term error.
 
-**Mathematical Formalization:** State-space trees, Bellman equation, and MPC in [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md).
+**Mathematical Formalization:** State-space trees, Bellman equation, and MPC in [Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md).
 
 **Prerequisites:** [SP_RM_Phase3.md](SP_RM_Phase3.md) complete.
 
@@ -41,4 +41,4 @@ $$I_T \ge SS_{target}$$
 
 - [SP_RM_Phase3.md](SP_RM_Phase3.md) — prerequisite micro MILP
 - [SP_RM_Phase5.md](SP_RM_Phase5.md) — next phase (portfolio optimizer)
-- [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) — dynamic programming / MPC theory
+- [Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md) — dynamic programming / MPC theory

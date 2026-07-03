@@ -47,7 +47,7 @@ Notes repo, then run `python scripts/sync_project_docs.py --write`
 ## Reading order
 
 1. [architecture/MRP_State_Machine_Architecture.md](architecture/MRP_State_Machine_Architecture.md) — why the engine must be sequential (vectorized trap, healing loop)
-2. [../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary and state/control equations
+2. [../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](math/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary and state/control equations
 3. [roadmaps/MRP_V2_Roadmap.md](roadmaps/MRP_V2_Roadmap.md) — cost optimization and V2 feature gaps
 4. [frameworks/Two_Dials_Framework.md](frameworks/Two_Dials_Framework.md) — macro/micro decoupling + peace/war closed loop
 5. [roadmaps/Supply_Planning_Tool_Roadmap.md](roadmaps/Supply_Planning_Tool_Roadmap.md) — battleship vs speedboats narrative
@@ -58,14 +58,21 @@ Notes repo, then run `python scripts/sync_project_docs.py --write`
 
 Three overlapping phase schemes (Pipeline Phases 1–7, Speedboat Phases 1–5, MRP V2 features). Canonical explanation: [Documentation map](../../Project_Documentation.md#documentation-map) in `Project_Documentation.md`.
 
-## Reusable theory (notes-only, not mirrored)
+## Math (canonical in Notes, mirrored to mrp_pipeline)
+
+Edit in **Notes** `math/supply-planning/`. Mirrors land in `mrp_pipeline/docs/supply-planning/math/`.
+
+| Document | Canonical (Notes) | Mirror (mrp_pipeline) |
+|----------|-------------------|----------------------|
+| Math index | [math/README.md](../../../Notes/math/README.md) | — (Notes-only index) |
+| [Math_Safety_Stock_Derivation.md](math/Math_Safety_Stock_Derivation.md) | [GitHub](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Safety_Stock_Derivation.md) | [math/Math_Safety_Stock_Derivation.md](https://github.com/endisciple13/mrp_pipeline/blob/main/docs/supply-planning/math/Math_Safety_Stock_Derivation.md) |
+| [Math_Supply_Planning_OR_Lexicon.md](math/Math_Supply_Planning_OR_Lexicon.md) | [GitHub](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) | [math/Math_Supply_Planning_OR_Lexicon.md](https://github.com/endisciple13/mrp_pipeline/blob/main/docs/supply-planning/math/Math_Supply_Planning_OR_Lexicon.md) |
+| [Math_Advanced_OR_Addendum.md](math/Math_Advanced_OR_Addendum.md) | [GitHub](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Advanced_OR_Addendum.md) | [math/Math_Advanced_OR_Addendum.md](https://github.com/endisciple13/mrp_pipeline/blob/main/docs/supply-planning/math/Math_Advanced_OR_Addendum.md) |
+
+## Meta theory (notes-only, not mirrored)
 
 | Document | GitHub |
 |----------|--------|
-| [Math index](../../../Notes/math/README.md) | [math/README.md](https://github.com/endisciple13/notes/blob/main/math/README.md) |
-| [Math_Safety_Stock_Derivation.md](../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) | [Math_Safety_Stock_Derivation.md](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Safety_Stock_Derivation.md) |
-| [Math_Supply_Planning_OR_Lexicon.md](../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) | [Math_Supply_Planning_OR_Lexicon.md](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) |
-| [Math_Advanced_OR_Addendum.md](../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) | [Math_Advanced_OR_Addendum.md](https://github.com/endisciple13/notes/blob/main/math/supply-planning/Math_Advanced_OR_Addendum.md) |
 | [Meta_Workflow.md](../../../Notes/meta/Meta_Workflow.md) | [Meta_Workflow.md](https://github.com/endisciple13/notes/blob/main/meta/Meta_Workflow.md) |
 | [OR_AI_ASI.md](../../../Notes/meta/OR_AI_ASI.md) | [OR_AI_ASI.md](https://github.com/endisciple13/notes/blob/main/meta/OR_AI_ASI.md) |
 | [AI_Deterministic_Delegation.md](../../../Notes/meta/AI_Deterministic_Delegation.md) | [AI_Deterministic_Delegation.md](https://github.com/endisciple13/notes/blob/main/meta/AI_Deterministic_Delegation.md) |
@@ -83,7 +90,7 @@ Canonical invariant definitions live in [blueprints/SP_RM_PhaseN.md](blueprints/
 | 4 — Horizon MILP | [SP_RM_Phase4.md](blueprints/SP_RM_Phase4.md) | Terminal state $\ge SS$; frozen-zone POR lock |
 | 5 — Portfolio MILP | [SP_RM_Phase5.md](blueprints/SP_RM_Phase5.md) | Mutually exclusive setup binaries; setup triangle inequality |
 
-When dynamic safety stock lands, also enforce $ROP = E[DDLT] + SS$ per [Math_Safety_Stock_Derivation.md](../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md).
+When dynamic safety stock lands, also enforce $ROP = E[DDLT] + SS$ per [Math_Safety_Stock_Derivation.md](math/Math_Safety_Stock_Derivation.md).
 
 ## Implementation docs (mrp_pipeline, not mirrored)
 

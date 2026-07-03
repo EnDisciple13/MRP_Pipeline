@@ -9,8 +9,8 @@ Phased narrative for building standalone Python supply-planning tools (the Speed
 - [../architecture/MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — Phase 1 foundation (sequential MRP).
 - [MRP_V2_Roadmap.md](MRP_V2_Roadmap.md) — engine feature evolution in mrp_pipeline.
 - [../frameworks/Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — architecture context (macro/micro, peace/war).
-- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — formal OR foundations.
-- [../../../../math/supply-planning/Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) — sheaf theory, MPC, portfolio math.
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — formal OR foundations.
+- [../../../../math/supply-planning/Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md) — sheaf theory, MPC, portfolio math.
 - [../context/SAP_Enterprise_Context.md](../context/SAP_Enterprise_Context.md) — why offline tools are needed vs live ERP.
 
 ---

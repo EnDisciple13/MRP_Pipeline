@@ -6,7 +6,7 @@
 
 **CS / English:** Build a lightweight PuLP script that evaluates a severely amputated time horizon ($T=3$). Takes a localized capacity constraint (e.g., broken machine at 40%) and optimizes $u_t$ control variables to minimize shortage penalty for parts currently waiting. Controlled introduction to linear programming without the butterfly effect of long horizons.
 
-**Mathematical Formalization:** Objective function, state/control variables, and MILP foundations in [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md).
+**Mathematical Formalization:** Objective function, state/control variables, and MILP foundations in [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md).
 
 **Prerequisites:** [SP_RM_Phase2.md](SP_RM_Phase2.md) complete.
 
@@ -47,4 +47,4 @@ $$Z_{MILP} \le Z_{MRP}$$
 
 - [SP_RM_Phase2.md](SP_RM_Phase2.md) — prerequisite DAG tracer
 - [SP_RM_Phase4.md](SP_RM_Phase4.md) — next phase (horizon MILP)
-- [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — MILP objective and constraints
+- [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — MILP objective and constraints

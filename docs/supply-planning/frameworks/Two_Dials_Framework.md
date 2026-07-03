@@ -9,8 +9,8 @@ Enterprise supply chain architecture: **Scale Dial** (scope) and **Time Dial** (
 - [../roadmaps/MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — cost optimization objective that motivated macro/micro decoupling.
 - [../roadmaps/Supply_Planning_Tool_Roadmap.md](../roadmaps/Supply_Planning_Tool_Roadmap.md) — phased Speedboat implementation.
 - [../context/SAP_Enterprise_Context.md](../context/SAP_Enterprise_Context.md) — SAP IBP/PP/MM as the global dictator (optional enterprise reference).
-- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — Z_macro / Z_micro formulations.
-- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — infinity clash and optimizer slack variables.
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — Z_macro / Z_micro formulations.
+- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../math/Math_Safety_Stock_Derivation.md) — infinity clash and optimizer slack variables.
 
 ---
 
@@ -113,7 +113,7 @@ By building both a local MRP and a local MILP, you create a **Digital Twin** of 
 
 ## **Part V: The Mathematics of Triage (Safety Stock vs. Shortage)**
 
-See [Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) (Part 8) for the formal treatment of the **Infinity Clash**, slack variable $V_t$, and stratified penalties ($C_{violation}$ vs $C_{shortage}$).
+See [Math_Safety_Stock_Derivation.md](../math/Math_Safety_Stock_Derivation.md) (Part 8) for the formal treatment of the **Infinity Clash**, slack variable $V_t$, and stratified penalties ($C_{violation}$ vs $C_{shortage}$).
 
 **Operational summary:** In forecasted demand (Peace Time), $SS_t$ is a rigid buffer target with no near-infinite shortage penalty on statistical tails. In firmed demand / operational chaos (War Time), the solver compares draining the statistical buffer ($V_t$, moderate $C_{violation}$) against missing a physical order (near-infinite $C_{shortage}$) and autonomously sacrifices the buffer to fulfill the firm constraint.
 

@@ -10,8 +10,8 @@ MRP supply-planning strategy notes mirror into `docs/supply-planning/` here.
 
 ## Current state
 
-- **Canonical (edit here in Notes):** `Notes/projects/mrp/supply-planning/` — six files (hub README + five strategy notes).
-- **Mirrors (generated):** `docs/supply-planning/` in this repo — synced by `scripts/sync_project_docs.py` from Notes.
+- **Canonical (edit in Notes):** `Notes/projects/mrp/supply-planning/` and `Notes/math/supply-planning/`
+- **Mirrors (generated):** `docs/supply-planning/` and `docs/supply-planning/math/` in this repo — synced by `scripts/sync_project_docs.py` from Notes.
 - **Application doc:** `Project_Documentation.md` (project-canonical, not mirrored).
 
 ## Where to edit
@@ -20,11 +20,12 @@ MRP supply-planning strategy notes mirror into `docs/supply-planning/` here.
 |---------|---------|
 | Application architecture | This repo: `Project_Documentation.md` |
 | Layer 0-1 supply-planning strategy | **Notes** `projects/mrp/supply-planning/` |
-| Reusable meta/math theory | **Notes** `meta/`, `math/` |
+| Supply-planning math | **Notes** `math/supply-planning/` (mirrored to `docs/supply-planning/math/`) |
+| Cross-project meta theory | **Notes** `meta/` |
 
 ## Keeping mirrors in sync
 
-After editing any canonical file under `Notes/projects/mrp/supply-planning/`:
+After editing any canonical file under `Notes/projects/mrp/supply-planning/` or `Notes/math/supply-planning/`:
 
 ```bash
 # from Notes repo root

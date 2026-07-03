@@ -6,7 +6,7 @@
 
 **CS / English:** Build a standalone script that runs the deterministic netting loop ($I_t = PAB_{t-1} + S_t - D_t$) and applies lead-time offsets for a specific subset of parts. This is the foundation — you cannot optimize a cost function if netting math is wrong. Unlocks immediate offline scenario modeling (e.g., which hospitals stock out when a supplier is 7 days late).
 
-**Mathematical Formalization:** See [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) for sequential state-machine physics vs the vectorized trap. State/control vocabulary: [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md).
+**Mathematical Formalization:** See [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) for sequential state-machine physics vs the vectorized trap. State/control vocabulary: [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md).
 
 **Prerequisites:** None. Read [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) before implementing.
 
@@ -50,4 +50,4 @@ $$I_t \ge 0 \quad \text{and} \quad PR_t \ge 0 \quad \text{for all } t$$
 - [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — sequential MRP foundation
 - [Supply_Planning_Tool_Roadmap.md](../roadmaps/Supply_Planning_Tool_Roadmap.md) — battleship vs speedboats narrative
 - [SP_RM_Phase2.md](SP_RM_Phase2.md) — next phase (DAG tracer)
-- [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary
+- [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary

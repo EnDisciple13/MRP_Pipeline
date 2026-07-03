@@ -6,7 +6,7 @@
 
 **CS / English:** Flatten the vertical BOM and isolate a single horizontal slice (e.g., all Level 3 parts on one machine). Optimize the entire vector of sibling SKUs simultaneously against a strict capacity allocation (e.g., 40%), balancing setup costs ($C_{setup}$) against holding costs ($C_{hold}$). Mathematical resolution to the presheaf collision within one jurisdiction.
 
-**Mathematical Formalization:** Sheaf/presheaf failure, resource disaggregation, and Dantzig-Wolfe in [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md).
+**Mathematical Formalization:** Sheaf/presheaf failure, resource disaggregation, and Dantzig-Wolfe in [Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md).
 
 **Prerequisites:** [SP_RM_Phase4.md](SP_RM_Phase4.md) complete.
 
@@ -41,5 +41,5 @@ $$C(A,C) \le C(A,B) + C(B,C)$$
 ## IV. Related Notes
 
 - [SP_RM_Phase4.md](SP_RM_Phase4.md) — prerequisite horizon MILP
-- [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) — presheaf / portfolio math
+- [Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md) — presheaf / portfolio math
 - [Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — macro/micro decoupling context

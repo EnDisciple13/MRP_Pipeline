@@ -9,8 +9,8 @@ Project strategy for the next evolution of the MRP engine: from single-echelon d
 - [../architecture/MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — sequential state-machine foundation.
 - [../frameworks/Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — macro/micro objective decoupling and peace/war workflow.
 - [Supply_Planning_Tool_Roadmap.md](Supply_Planning_Tool_Roadmap.md) — phased Python tool build order.
-- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP derivation (reference, do not duplicate).
-- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP objective.
+- [../../../../math/supply-planning/Math_Safety_Stock_Derivation.md](../math/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP derivation (reference, do not duplicate).
+- [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP objective.
 
 ---
 
@@ -112,6 +112,6 @@ The engine uses a modified Economic Order Quantity (EOQ) logic to evaluate the T
 
 Objective function, hard constraints, trade-offs, and MILP theory are canonical in:
 
-- [Math_Supply_Planning_OR_Lexicon.md](../../../../Notes/math/supply-planning/Math_Supply_Planning_OR_Lexicon.md) — master equation $Z$, state/control variables, inventory balance
-- [Math_Safety_Stock_Derivation.md](../../../../Notes/math/supply-planning/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP and infinity clash
-- [Math_Advanced_OR_Addendum.md](../../../../Notes/math/supply-planning/Math_Advanced_OR_Addendum.md) — Bellman equation, MPC, portfolio disaggregation
+- [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — master equation $Z$, state/control variables, inventory balance
+- [Math_Safety_Stock_Derivation.md](../math/Math_Safety_Stock_Derivation.md) — dynamic SS/ROP and infinity clash
+- [Math_Advanced_OR_Addendum.md](../math/Math_Advanced_OR_Addendum.md) — Bellman equation, MPC, portfolio disaggregation
