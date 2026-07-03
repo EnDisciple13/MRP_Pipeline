@@ -1,6 +1,6 @@
 # MRP Pipeline
 
-Modular Python refactor of the original Colab notebook. See **[Project_Documentation.md](Project_Documentation.md)** for blueprint-by-blueprint documentation. Legacy source files are in [`legacy/`](legacy/).
+Modular Python refactor of the original Colab notebook. See **[Project_Documentation.md](Project_Documentation.md)** for blueprint-by-blueprint documentation. Strategy docs: **[docs/supply-planning/README.md](docs/supply-planning/README.md)**. Legacy source files are in [`legacy/`](legacy/).
 
 ## Setup
 

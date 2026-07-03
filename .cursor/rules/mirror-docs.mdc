@@ -1,36 +1,38 @@
 ---
-description: Cross-repo mirror doc rules — edit canonical in Notes when PE docs exist
+description: Cross-repo mirror doc rules — edit canonical in Notes when mirrored strategy docs exist
 alwaysApply: true
 ---
 
 # Mirror docs (mrp_pipeline)
 
 This repo is part of a multi-root workspace with the **Notes** knowledge base.
-When MRP platform-engineering notes are authored, they will mirror into
-`docs/platform-engineering/` here — same pattern as covenant_pipeline.
+MRP supply-planning strategy notes mirror into `docs/supply-planning/` here.
 
 ## Current state
 
-- MRP PE notes are not yet authored (`Notes/projects/mrp/` is a placeholder).
-- Mirror group is registered in `Notes/registry.yaml` with `pairs: []`.
-- Application doc: `Project_Documentation.md` (project-canonical).
+- **Canonical (edit here in Notes):** `Notes/projects/mrp/supply-planning/` — six files (hub README + five strategy notes).
+- **Mirrors (generated):** `docs/supply-planning/` in this repo — synced by `scripts/sync_project_docs.py` from Notes.
+- **Application doc:** `Project_Documentation.md` (project-canonical, not mirrored).
 
-## Where to edit (now)
+## Where to edit
 
 | Content | Edit in |
 |---------|---------|
 | Application architecture | This repo: `Project_Documentation.md` |
-| Layer 0-1 strategy (when added) | **Notes** `projects/mrp/` |
+| Layer 0-1 supply-planning strategy | **Notes** `projects/mrp/supply-planning/` |
 | Reusable meta/math theory | **Notes** `meta/`, `math/` |
 
-## When PE notes are added
+## Keeping mirrors in sync
 
-Follow MRP onboarding in the `notes-cross-repo-sync` skill:
+After editing any canonical file under `Notes/projects/mrp/supply-planning/`:
 
-1. Author canonical files in `Notes/projects/mrp/`
-2. Add mirror pairs to `registry.yaml`
-3. Run `python scripts/sync_pe_docs.py --write` from Notes
-4. Commit mirrors here; add CI mirror-check (copy covenant pattern)
+```bash
+# from Notes repo root
+py scripts/sync_project_docs.py --write
+py scripts/sync_project_docs.py --check
+```
+
+Then commit regenerated mirrors in this repo. CI (`.github/workflows/mirror-check.yml`) runs `--check` on PRs touching `docs/supply-planning/**`.
 
 ## Never edit mirror files directly
 

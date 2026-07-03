@@ -5,6 +5,8 @@
 ## Project Outline
 
 - [Related Notes](#related-notes)
+- [Documentation map](#documentation-map)
+  - [Layer 4 validation targets](#layer4-validation-targets)
 - [Project Outline](#project-outline)
 - [The Pipeline](#the-pipeline)
 - [Refactored Repository Architecture](#refactored-repository-architecture)
@@ -66,7 +68,47 @@ Conceptual context for this pipeline lives in the companion `notes` repo (open i
 
 - [notes/meta/Meta_Workflow.md](../notes/meta/Meta_Workflow.md) — canonical 0-4 Centaur meta-workflow.
 - [notes/meta/Layer4_TypeB_Auditing.md](../notes/meta/Layer4_TypeB_Auditing.md) — Type B auditing; conservation and state-machine invariants relevant to the Alpha/Beta/Delta timelines.
-- [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index (Layer 0-1 strategy).
+- [notes/meta/OR_AI_ASI.md](../notes/meta/OR_AI_ASI.md) — OR pillars and supply-planning examples (PAB, BOM DAG, capacity constraints).
+- [notes/meta/AI_Deterministic_Delegation.md](../notes/meta/AI_Deterministic_Delegation.md) — architecture-first workflow for building deterministic MRP micro-engines.
+- [docs/supply-planning/README.md](docs/supply-planning/README.md) — strategy docs (mirror of Notes supply-planning hub).
+- [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index.
+- [notes/projects/mrp/supply-planning/MRP_State_Machine_Architecture.md](../notes/projects/mrp/supply-planning/MRP_State_Machine_Architecture.md) — sequential state machine vs vectorized trap (Blueprint 2 foundation).
+- [notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md) — V2 engine evolution: multi-echelon, cost optimization, dynamic SS.
+- [notes/projects/mrp/supply-planning/Two_Dials_Framework.md](../notes/projects/mrp/supply-planning/Two_Dials_Framework.md) — macro/micro decoupling and peace/war closed-loop workflow.
+- [notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md) — phased Speedboat tool build with Layer 4 invariants.
+- [notes/projects/mrp/supply-planning/SAP_Enterprise_Context.md](../notes/projects/mrp/supply-planning/SAP_Enterprise_Context.md) — SAP IBP/PP/MM mapping (optional enterprise reference).
+- [notes/math/Math_Safety_Stock_Derivation.md](../notes/math/Math_Safety_Stock_Derivation.md) — DDLT, safety stock, infinity clash.
+- [notes/math/Math_Supply_Planning_OR_Lexicon.md](../notes/math/Math_Supply_Planning_OR_Lexicon.md) — OR lexicon and MILP foundations.
+
+<a id="documentation-map"></a>
+
+## Documentation map
+
+Three strategy documents use overlapping vocabulary but describe different scopes. Do not conflate their phase numbers.
+
+**Pipeline Phases 1–7** (this document) describe the shipped Alpha → Beta → Delta simulation: baseline generation, chaos recalculation, variance rollups, Excel shadow ledgers, and Python–Excel isomorphism testing. This is what `main.py` runs today.
+
+**Speedboat Phases 1–5** ([Supply_Planning_Tool_Roadmap.md](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md)) describe standalone Python supply-planning tools built beside the pipeline: sandbox MRP → BOM DAG tracer → micro/horizon/portfolio MILP optimizers. Most of this is future work.
+
+**MRP V2** ([MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/MRP_V2_Roadmap.md)) describes forward-looking engine features (multi-echelon BOM explosion, dynamic safety stock, cost optimization, capacity underutilization). These extend Blueprint 2 physics but are not fully implemented.
+
+**Rough mapping:** Pipeline Phase 1 / Blueprint 2 ≈ Speedboat Phase 1 (sequential sandbox MRP). Speedboat Phases 2–5 and most V2 items are not yet in the codebase.
+
+<a id="layer4-validation-targets"></a>
+
+### Layer 4 validation targets
+
+Validation backlog from [Supply Planning Tool Roadmap](../notes/projects/mrp/supply-planning/Supply_Planning_Tool_Roadmap.md). Not yet enforced in `mrp_pipeline` tests/schemas.
+
+| Phase | Invariants to enforce in `mrp_pipeline` tests/schemas |
+|-------|------------------------------------------------------|
+| 1 — Sandbox MRP | Conservation of mass; non-negativity; lead-time offset; MOQ modulo |
+| 2 — DAG tracer | Topological acyclicity; quantity-per conservation; nilpotent BOM matrix |
+| 3 — Micro MILP | Capacity bound audit; integer floor; $Z_{MILP} \le Z_{MRP}$; complementary slackness |
+| 4 — Horizon MILP | Terminal state $\ge SS$; frozen-zone POR lock |
+| 5 — Portfolio MILP | Mutually exclusive setup binaries; setup triangle inequality |
+
+When dynamic safety stock lands, also enforce $ROP = E[DDLT] + SS$ per [Math_Safety_Stock_Derivation.md](../notes/math/Math_Safety_Stock_Derivation.md).
 
 <a id="project-outline"></a>
 
