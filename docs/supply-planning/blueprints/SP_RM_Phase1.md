@@ -5,6 +5,8 @@ id: projects-mrp-supply-planning-blueprints-SP_RM_Phase1
 type: blueprint
 status: draft
 dependencies:
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
 tags: []
 invariants:
   - id: conservation-of-mass

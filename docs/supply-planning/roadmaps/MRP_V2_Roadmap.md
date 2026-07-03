@@ -5,6 +5,10 @@ id: projects-mrp-supply-planning-roadmaps-MRP_V2_Roadmap
 type: roadmap
 status: draft
 dependencies:
+  - math/supply-planning/Math_Safety_Stock_Derivation.md
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
+  - projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md
 tags: []
 invariants: []
 ---

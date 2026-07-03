@@ -5,8 +5,12 @@ id: projects-mrp-supply-planning-blueprints-SP_RM_Phase4
 type: blueprint
 status: draft
 dependencies:
+  - math/supply-planning/Math_Advanced_OR_Addendum.md
+  - projects/mrp/supply-planning/blueprints/SP_RM_Phase3.md
 tags: []
-invariants: []
+invariants:
+  - id: cumulative-lead-time
+    statement: "Horizon MILP respects cumulative lead time across multi-echelon BOM paths"
 ---
 # Technical Blueprint: Phase 4 - Horizon Optimizer (Cumulative Lead Time)
 

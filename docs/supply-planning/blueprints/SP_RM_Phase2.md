@@ -5,8 +5,14 @@ id: projects-mrp-supply-planning-blueprints-SP_RM_Phase2
 type: blueprint
 status: draft
 dependencies:
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - projects/mrp/supply-planning/blueprints/SP_RM_Phase1.md
 tags: []
-invariants: []
+invariants:
+  - id: bom-dag
+    statement: "Bill of Materials graph is a directed acyclic graph with no self-requiring assemblies"
+  - id: quantity-per-conservation
+    statement: "Gozinto quantity-per factors multiply correctly through BOM explosion"
 ---
 # Technical Blueprint: Phase 2 - Root-Cause Tracer (DAG Traversal)
 

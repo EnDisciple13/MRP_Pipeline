@@ -5,8 +5,13 @@ id: math-supply-planning-or-lexicon
 type: math_domain
 status: draft
 dependencies:
+  - math/supply-planning/Math_Safety_Stock_Derivation.md
 tags: []
-invariants: []
+invariants:
+  - id: inventory-balance
+    statement: "Inventory balance I_t = I_{t-1} + R_t - D_t holds for all periods t"
+  - id: non-negative-controls
+    statement: "Control variables receipts R_t and planned orders must be non-negative"
 ---
 # Supply Planning OR Lexicon
 

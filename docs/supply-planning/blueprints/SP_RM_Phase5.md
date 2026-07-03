@@ -5,8 +5,13 @@ id: projects-mrp-supply-planning-blueprints-SP_RM_Phase5
 type: blueprint
 status: draft
 dependencies:
+  - math/supply-planning/Math_Advanced_OR_Addendum.md
+  - projects/mrp/supply-planning/blueprints/SP_RM_Phase4.md
+  - projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md
 tags: []
-invariants: []
+invariants:
+  - id: portfolio-conservation
+    statement: "Portfolio MILP disaggregation preserves total resource allocation across product families"
 ---
 # Technical Blueprint: Phase 5 - Portfolio Optimizer (Jurisdictional Resource Disaggregation)
 

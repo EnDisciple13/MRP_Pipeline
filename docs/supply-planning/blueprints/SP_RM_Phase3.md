@@ -5,8 +5,15 @@ id: projects-mrp-supply-planning-blueprints-SP_RM_Phase3
 type: blueprint
 status: draft
 dependencies:
+  - math/supply-planning/Math_Advanced_OR_Addendum.md
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - projects/mrp/supply-planning/blueprints/SP_RM_Phase2.md
 tags: []
-invariants: []
+invariants:
+  - id: milp-feasibility
+    statement: "Micro MILP solution satisfies all inventory balance and capacity constraints"
+  - id: horizon-bound
+    statement: "Micro MILP horizon is bounded to 72-hour triage window"
 ---
 # Technical Blueprint: Phase 3 - Micro-Optimizer (Local MILP, 72-Hour Triage)
 

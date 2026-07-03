@@ -5,6 +5,7 @@ id: projects-mrp-supply-planning-context-SAP_Enterprise_Context
 type: context
 status: draft
 dependencies:
+  - projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md
 tags: []
 invariants: []
 ---

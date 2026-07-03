@@ -5,8 +5,13 @@ id: math-advanced-or-addendum
 type: math_domain
 status: draft
 dependencies:
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
 tags: []
-invariants: []
+invariants:
+  - id: bellman-optimality
+    statement: "Optimal policy satisfies Bellman equation over the state-space tree"
+  - id: disaggregation-conservation
+    statement: "Portfolio disaggregation sums preserve total resource allocation across SKUs"
 ---
 # Advanced OR Addendum (Supply Planning)
 

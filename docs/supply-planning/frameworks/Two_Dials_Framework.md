@@ -5,6 +5,8 @@ id: projects-mrp-supply-planning-frameworks-Two_Dials_Framework
 type: framework
 status: draft
 dependencies:
+  - math/supply-planning/Math_Safety_Stock_Derivation.md
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
 tags: []
 invariants: []
 ---

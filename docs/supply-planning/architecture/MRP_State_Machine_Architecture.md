@@ -5,6 +5,8 @@ id: projects-mrp-supply-planning-architecture-MRP_State_Machine_Architecture
 type: architecture
 status: draft
 dependencies:
+  - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - meta/Layer4_TypeB_Auditing.md
 tags: []
 invariants:
   - id: mandatory-beta

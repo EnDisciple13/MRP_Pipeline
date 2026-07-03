@@ -5,6 +5,8 @@ id: math-safety-stock-derivation
 type: math_domain
 status: draft
 dependencies:
+  - meta/Layer4_TypeB_Auditing.md
+  - meta/OR_AI_ASI.md
 tags: []
 invariants:
   - id: rop-formula
