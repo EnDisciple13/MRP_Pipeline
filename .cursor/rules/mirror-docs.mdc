@@ -33,7 +33,7 @@ py scripts/sync_project_docs.py --write
 py scripts/sync_project_docs.py --check
 ```
 
-Then commit regenerated mirrors in this repo. CI (`.github/workflows/mirror-check.yml`) runs `--check` on PRs touching `docs/supply-planning/**`.
+Then commit regenerated mirrors in this repo. Mirror drift is gated locally in Notes (pre-commit `--check` and `sync_project_docs.py --check`); project-repo CI mirror-check is not used.
 
 ## Never edit mirror files directly
 
