@@ -28,6 +28,7 @@ Notes repo, then run `python scripts/sync_project_docs.py --write`
 | Document | Local | GitHub |
 |----------|-------|--------|
 | Two Dials framework | [frameworks/Two_Dials_Framework.md](frameworks/Two_Dials_Framework.md) | [Two_Dials_Framework.md](https://github.com/endisciple13/notes/blob/main/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md) |
+| Invariant suite (implemented engine) | [frameworks/MRP_Invariant_Suite.md](frameworks/MRP_Invariant_Suite.md) | [MRP_Invariant_Suite.md](https://github.com/endisciple13/notes/blob/main/projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md) |
 
 ### Roadmaps
 
@@ -88,7 +89,7 @@ Edit in **Notes** `math/supply-planning/`. Mirrors land in `mrp_pipeline/docs/su
 
 ## Layer 4 invariant summary (canonical in blueprints)
 
-Canonical invariant definitions live in [blueprints/SP_RM_PhaseN.md](blueprints/SP_RM_Phase1.md). Summary for `mrp_pipeline` test/schema planning:
+Canonical invariant definitions live in [blueprints/SP_RM_PhaseN.md](blueprints/SP_RM_Phase1.md). For the **already-implemented Alpha/Beta/Delta engine**, the invariant suite is [frameworks/MRP_Invariant_Suite.md](frameworks/MRP_Invariant_Suite.md) (zero-chaos ⇒ Δ≡0, mass balance, inheritance gluing, chaos support, determinism, export round-trip — none currently enforced by tests). Summary for `mrp_pipeline` test/schema planning:
 
 | Phase | Blueprint | Key invariants |
 |-------|-----------|----------------|

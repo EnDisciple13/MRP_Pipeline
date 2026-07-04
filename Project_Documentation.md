@@ -71,6 +71,7 @@ Conceptual context for this pipeline lives in the companion `notes` repo (open i
 - [notes/meta/OR_AI_ASI.md](../notes/meta/OR_AI_ASI.md) — OR pillars and supply-planning examples (PAB, BOM DAG, capacity constraints).
 - [notes/meta/AI_Deterministic_Delegation.md](../notes/meta/AI_Deterministic_Delegation.md) — architecture-first workflow for building deterministic MRP micro-engines.
 - [docs/supply-planning/README.md](docs/supply-planning/README.md) — strategy docs (mirror of Notes supply-planning hub).
+- [docs/supply-planning/frameworks/MRP_Invariant_Suite.md](docs/supply-planning/frameworks/MRP_Invariant_Suite.md) — Layer 4 invariant suite for the implemented Alpha/Beta/Delta engine (zero-chaos ⇒ Δ≡0, mass balance, inheritance gluing, chaos support, determinism, export round-trip).
 - [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index.
 - [notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md](../notes/projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md) — sequential state machine vs vectorized trap (Blueprint 2 foundation).
 - [notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md](../notes/projects/mrp/supply-planning/roadmaps/MRP_V2_Roadmap.md) — V2 engine evolution: multi-echelon, cost optimization, dynamic SS.
