@@ -3,7 +3,7 @@
 ---
 id: projects-mrp-supply-planning-frameworks-MRP_Invariant_Suite
 type: framework
-status: draft
+status: verified
 dependencies:
   - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
