@@ -30,9 +30,11 @@ invariants:
 
 > Applied inventory of Layer 4 invariants for the MRP engine's **already-implemented** phases. Theory and taxonomy: [Invariant_Authorship.md](../../../../Notes/meta/Invariant_Authorship.md). Audit mechanisms and ROI tiers: [Layer4_TypeB_Auditing.md](../../../../Notes/meta/Layer4_TypeB_Auditing.md). State-space definitions (Alpha/Beta/Delta): [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md).
 
-## Enforcement status (as of 2026-07-03)
+## Enforcement status (as of 2026-07-05)
 
-**None of the invariants below are currently enforced by project tests.** The repo has a dashboard audit (viz-vs-data consistency) and smoke/path tests only; no Pydantic boundaries, no Hypothesis property tests. This suite is the specification for closing that gap — the MRP engine has the richest Layer 1 theory in the workspace and the thinnest Layer 4 enforcement.
+**Stage 0 partially implemented** in `tests/invariants/` (pytest). **Named tests:** `zero-chaos-delta-zero` (join identity + empty-chaos bounded delta), `mass-balance` (per-period PAB recursion), `inheritance-gluing` (On_Hand + demand shift at seam). **Mutation drill v0:** baseline 2026-07-05 — M1/M2 killed.
+
+**Still absent:** `chaos-support`, `run-determinism`, `export-round-trip`; full end-to-end zero-delta theorem enforcement; Hypothesis randomization. Dashboard audit and smoke/path tests remain.
 
 ## The suite (priority order)
 
@@ -56,7 +58,9 @@ invariants:
 
 ## First rep
 
-Implement invariants 1–3 as the initial suite (small, high-yield, all theorems of existing Layer 1 documents). Then add mutation drills: an agent deliberately introduces a subtle Type B bug (drop a unit, skip Beta, corrupt the seam); the suite must go red. Surviving mutants reveal missing invariants and give each invariant an empirical kill rate.
+**Done (2026-07-05):** Stage 0 tests for invariants 1–3. Mutation drill v0 baseline recorded. `pipeline/runner.py` honors `chaos_payload=[]`.
+
+**Next:** `chaos-support`, `run-determinism`, `export-round-trip`; tighten zero-chaos end-to-end delta theorem vs calendar seam.
 
 ## Related Notes
 

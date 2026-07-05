@@ -147,7 +147,7 @@ def run_beta(
     """Run Phase II Beta: inheritance, chaos, recalculation."""
     constraints = constraints or CONSTRAINTS
     demand = demand or DEMAND
-    chaos_payload = chaos_payload or CHAOS_PAYLOAD
+    chaos_payload = CHAOS_PAYLOAD if chaos_payload is None else chaos_payload
 
     print("=== INITIATING PHASE II: THE BETA ENGINE ===")
     beta_calendar_array = advance_rolling_horizon(alpha.calendar_array)
