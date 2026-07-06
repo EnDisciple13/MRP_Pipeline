@@ -30,11 +30,11 @@ invariants:
 
 > Applied inventory of Layer 4 invariants for the MRP engine's **already-implemented** phases. Theory and taxonomy: [Invariant_Authorship.md](../../../../Notes/meta/Invariant_Authorship.md). Audit mechanisms and ROI tiers: [Layer4_TypeB_Auditing.md](../../../../Notes/meta/Layer4_TypeB_Auditing.md). State-space definitions (Alpha/Beta/Delta): [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md).
 
-## Enforcement status (as of 2026-07-05)
+## Enforcement status (as of 2026-07-06)
 
-**Stage 0 partially implemented** in `tests/invariants/` (pytest). **Named tests:** `zero-chaos-delta-zero` (join identity + empty-chaos bounded delta), `mass-balance` (per-period PAB recursion), `inheritance-gluing` (On_Hand + demand shift at seam). **Mutation drill v0:** baseline 2026-07-05 — M1/M2 killed.
+**Hypothesis property suite implemented** in `tests/invariants/` and `tests/lexicon/` (pytest + hypothesis). **Named tests:** `zero-chaos-delta-zero`, `mass-balance`, `inheritance-gluing`, `chaos-support`, `run-determinism`, `export-round-trip`, `inventory-balance`, `non-negative-controls`. **Mutation drill 2026-07-06:** M1/M2/M4/M5/M6/M7 killed; M3 survivor documented as transition-legality spec gap. **xfail:** strict Δ≡0 on headless pipeline (calendar seam).
 
-**Still absent:** `chaos-support`, `run-determinism`, `export-round-trip`; full end-to-end zero-delta theorem enforcement; Hypothesis randomization. Dashboard audit and smoke/path tests remain.
+**Existing (unchanged):** Dashboard audit and smoke/path tests.
 
 ## The suite (priority order)
 
@@ -58,9 +58,9 @@ invariants:
 
 ## First rep
 
-**Done (2026-07-05):** Stage 0 tests for invariants 1–3. Mutation drill v0 baseline recorded. `pipeline/runner.py` honors `chaos_payload=[]`.
+**Done (2026-07-06):** Hypothesis property suite per [SP_Property_Test_Specs.md](../blueprints/SP_Property_Test_Specs.md); mutation drill 2026-07-06 (M1/M2/M4/M5/M6/M7 killed).
 
-**Next:** `chaos-support`, `run-determinism`, `export-round-trip`; tighten zero-chaos end-to-end delta theorem vs calendar seam.
+**Next:** transition-legality property for M3 survivor; strict zero-chaos Δ≡0 calendar seam fix.
 
 ## Related Notes
 

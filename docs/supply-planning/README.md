@@ -29,6 +29,7 @@ Notes repo, then run `python scripts/sync_project_docs.py --write`
 |----------|-------|--------|
 | Two Dials framework | [frameworks/Two_Dials_Framework.md](frameworks/Two_Dials_Framework.md) | [Two_Dials_Framework.md](https://github.com/endisciple13/notes/blob/main/projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md) |
 | Invariant suite (implemented engine) | [frameworks/MRP_Invariant_Suite.md](frameworks/MRP_Invariant_Suite.md) | [MRP_Invariant_Suite.md](https://github.com/endisciple13/notes/blob/main/projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md) |
+| Property test specs (Hypothesis) | [blueprints/SP_Property_Test_Specs.md](blueprints/SP_Property_Test_Specs.md) | [SP_Property_Test_Specs.md](https://github.com/endisciple13/notes/blob/main/projects/mrp/supply-planning/blueprints/SP_Property_Test_Specs.md) |
 
 ### Roadmaps
 
