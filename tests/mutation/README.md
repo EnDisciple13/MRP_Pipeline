@@ -39,6 +39,7 @@ Expected initial survivors: mutations targeting chaos-support, run-determinism, 
 | Date | Report | Model/agent | Kill rate | Survivors |
 |------|--------|-------------|-----------|-----------|
 | 2026-07-05 | [2026-07-05-baseline.md](reports/2026-07-05-baseline.md) | Composer 2.5 | M1/M2 killed; M3/M4 partial | chaos-support, determinism (not in Stage 0) |
+| 2026-07-06 | [2026-07-06-property-tests.md](reports/2026-07-06-property-tests.md) | Composer | M1/M2/M4/M5/M6/M7 killed; M3 survivor (spec gap) | M3 transition-legality |
 
 Re-run after new invariant tests or model change. Each re-run should add ≥1 new mutation matching current failure sophistication.
 
