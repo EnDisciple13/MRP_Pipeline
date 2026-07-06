@@ -7,6 +7,7 @@ status: draft
 dependencies:
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
   - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
+  - projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
 tags: []
 invariants:
   - id: conservation-of-mass
@@ -15,6 +16,47 @@ invariants:
     statement: "Physical inventory I_t and planned receipts PR_t must be non-negative for all t"
   - id: lead-time-offset
     statement: "If no supply in transit for lead time L, planned receipts for days 0 through L-1 must be zero"
+inherited_invariants:
+  - id: inventory-balance
+    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+    status: planned
+    enforced_by: "tests/lexicon/test_inventory_balance.py::test_pab_recursion_matches_lexicon"
+  - id: non-negative-controls
+    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+    status: planned
+    enforced_by: "tests/lexicon/test_non_negative_controls.py::test_inventory_and_receipts_non_negative"
+  - id: mandatory-beta
+    from: projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
+    status: planned
+    enforced_by: "tests/architecture/test_mandatory_beta.py::test_beta_timeline_required"
+  - id: non-negative-lead-time
+    from: projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
+    status: planned
+    enforced_by: "tests/architecture/test_non_negative_lead_time.py::test_lead_time_non_negative"
+  - id: zero-chaos-delta-zero
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_zero_chaos_delta_zero.py::test_zero_chaos_delta_zero_no_chaos_events"
+  - id: mass-balance
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_mass_balance.py::test_mass_balance_per_period"
+  - id: inheritance-gluing
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_inheritance_gluing.py::test_inheritance_gluing_on_hand"
+  - id: chaos-support
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_chaos_support.py::test_diff_support_subset"
+  - id: run-determinism
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_run_determinism.py::test_byte_identical_outputs"
+  - id: export-round-trip
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_export_round_trip.py::test_excel_values_match_source"
 ---
 # Technical Blueprint: Phase 1 - Sandbox Simulator (Local MRP Engine)
 

@@ -8,12 +8,62 @@ dependencies:
   - math/supply-planning/Math_Advanced_OR_Addendum.md
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
   - projects/mrp/supply-planning/blueprints/SP_RM_Phase2.md
+  - projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
 tags: []
 invariants:
   - id: milp-feasibility
     statement: "Micro MILP solution satisfies all inventory balance and capacity constraints"
   - id: horizon-bound
     statement: "Micro MILP horizon is bounded to 72-hour triage window"
+inherited_invariants:
+  - id: bellman-optimality
+    from: math/supply-planning/Math_Advanced_OR_Addendum.md
+    status: planned
+    enforced_by: "tests/or/test_bellman_optimality.py::test_bellman_backup_holds"
+  - id: disaggregation-conservation
+    from: math/supply-planning/Math_Advanced_OR_Addendum.md
+    status: planned
+    enforced_by: "tests/or/test_disaggregation_conservation.py::test_family_totals_preserved"
+  - id: inventory-balance
+    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+    status: planned
+    enforced_by: "tests/lexicon/test_inventory_balance.py::test_pab_recursion_matches_lexicon"
+  - id: non-negative-controls
+    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+    status: planned
+    enforced_by: "tests/lexicon/test_non_negative_controls.py::test_inventory_and_receipts_non_negative"
+  - id: bom-dag
+    from: projects/mrp/supply-planning/blueprints/SP_RM_Phase2.md
+    status: planned
+    enforced_by: "tests/phase2/test_bom_dag.py::test_bom_is_acyclic"
+  - id: quantity-per-conservation
+    from: projects/mrp/supply-planning/blueprints/SP_RM_Phase2.md
+    status: planned
+    enforced_by: "tests/phase2/test_quantity_per_conservation.py::test_gozinto_factors_multiply"
+  - id: zero-chaos-delta-zero
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_zero_chaos_delta_zero.py::test_zero_chaos_delta_zero_no_chaos_events"
+  - id: mass-balance
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_mass_balance.py::test_mass_balance_per_period"
+  - id: inheritance-gluing
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_inheritance_gluing.py::test_inheritance_gluing_on_hand"
+  - id: chaos-support
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_chaos_support.py::test_diff_support_subset"
+  - id: run-determinism
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_run_determinism.py::test_byte_identical_outputs"
+  - id: export-round-trip
+    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
+    status: planned
+    enforced_by: "tests/invariants/test_export_round_trip.py::test_excel_values_match_source"
 ---
 # Technical Blueprint: Phase 3 - Micro-Optimizer (Local MILP, 72-Hour Triage)
 
