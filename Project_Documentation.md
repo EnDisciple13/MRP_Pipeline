@@ -67,9 +67,9 @@
 Conceptual context for this pipeline lives in the companion `notes` repo (open it alongside this repo in the Cursor multi-root workspace). These links resolve locally; they do not render on GitHub since the repos publish separately.
 
 - [notes/meta/Meta_Workflow.md](../notes/meta/Meta_Workflow.md) — canonical 0-4 Centaur meta-workflow.
-- [notes/meta/Layer4_TypeB_Auditing.md](../notes/meta/Layer4_TypeB_Auditing.md) — Type B auditing; conservation and state-machine invariants relevant to the Alpha/Beta/Delta timelines.
+- [notes/meta/verification/Layer4_TypeB_Auditing.md](../notes/meta/verification/Layer4_TypeB_Auditing.md) — Type B auditing; conservation and state-machine invariants relevant to the Alpha/Beta/Delta timelines.
 - [notes/meta/OR_AI_ASI.md](../notes/meta/OR_AI_ASI.md) — OR pillars and supply-planning examples (PAB, BOM DAG, capacity constraints).
-- [notes/meta/AI_Deterministic_Delegation.md](../notes/meta/AI_Deterministic_Delegation.md) — architecture-first workflow for building deterministic MRP micro-engines.
+- [notes/meta/orchestration/AI_Deterministic_Delegation.md](../notes/meta/orchestration/AI_Deterministic_Delegation.md) — architecture-first workflow for building deterministic MRP micro-engines.
 - [docs/supply-planning/README.md](docs/supply-planning/README.md) — strategy docs (mirror of Notes supply-planning hub).
 - [docs/supply-planning/frameworks/MRP_Invariant_Suite.md](docs/supply-planning/frameworks/MRP_Invariant_Suite.md) — Layer 4 invariant suite for the implemented Alpha/Beta/Delta engine (zero-chaos ⇒ Δ≡0, mass balance, inheritance gluing, chaos support, determinism, export round-trip).
 - [notes/projects/mrp/README.md](../notes/projects/mrp/README.md) — project note index.

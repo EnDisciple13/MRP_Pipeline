@@ -5,10 +5,10 @@ id: projects-mrp-supply-planning-frameworks-MRP_Invariant_Suite
 type: framework
 status: verified
 dependencies:
-  - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
-  - meta/Layer4_TypeB_Auditing.md
-  - meta/Invariant_Authorship.md
+  - meta/rigor/Invariant_Authorship.md
+  - meta/verification/Layer4_TypeB_Auditing.md
+  - projects/mrp/supply-planning/architecture/MRP_State_Machine_Architecture.md
 tags:
   - invariants
   - layer4
@@ -28,7 +28,7 @@ invariants:
 ---
 # MRP Invariant Suite (Layer 4 Validation Targets)
 
-> Applied inventory of Layer 4 invariants for the MRP engine's **already-implemented** phases. Theory and taxonomy: [Invariant_Authorship.md](../../../../Notes/meta/Invariant_Authorship.md). Audit mechanisms and ROI tiers: [Layer4_TypeB_Auditing.md](../../../../Notes/meta/Layer4_TypeB_Auditing.md). State-space definitions (Alpha/Beta/Delta): [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md).
+> Applied inventory of Layer 4 invariants for the MRP engine's **already-implemented** phases. Theory and taxonomy: [Invariant_Authorship.md](../../../../Notes/meta/rigor/Invariant_Authorship.md). Audit mechanisms and ROI tiers: [Layer4_TypeB_Auditing.md](../../../../Notes/meta/verification/Layer4_TypeB_Auditing.md). State-space definitions (Alpha/Beta/Delta): [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md).
 
 ## Enforcement status (as of 2026-07-06)
 
@@ -64,7 +64,7 @@ invariants:
 
 ## Related Notes
 
-- [Invariant_Authorship.md](../../../../Notes/meta/Invariant_Authorship.md) — theory, taxonomy, authorship split.
+- [Invariant_Authorship.md](../../../../Notes/meta/rigor/Invariant_Authorship.md) — theory, taxonomy, authorship split.
 - [MRP_State_Machine_Architecture.md](../architecture/MRP_State_Machine_Architecture.md) — Alpha/Beta/Delta state space these invariants defend.
 - [MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — engine evolution; V2 features inherit this suite.
 - [SP_RM_Phase1.md](../blueprints/SP_RM_Phase1.md) — phased blueprints; blueprints should map inherited invariant ids to named tests.

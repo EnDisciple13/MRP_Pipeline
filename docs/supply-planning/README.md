@@ -85,8 +85,8 @@ Edit in **Notes** `math/supply-planning/`. Mirrors land in `mrp_pipeline/docs/su
 |----------|--------|
 | [Meta_Workflow.md](../../../Notes/meta/Meta_Workflow.md) | [Meta_Workflow.md](https://github.com/endisciple13/notes/blob/main/meta/Meta_Workflow.md) |
 | [OR_AI_ASI.md](../../../Notes/meta/OR_AI_ASI.md) | [OR_AI_ASI.md](https://github.com/endisciple13/notes/blob/main/meta/OR_AI_ASI.md) |
-| [AI_Deterministic_Delegation.md](../../../Notes/meta/AI_Deterministic_Delegation.md) | [AI_Deterministic_Delegation.md](https://github.com/endisciple13/notes/blob/main/meta/AI_Deterministic_Delegation.md) |
-| [Layer4_TypeB_Auditing.md](../../../Notes/meta/Layer4_TypeB_Auditing.md) | [Layer4_TypeB_Auditing.md](https://github.com/endisciple13/notes/blob/main/meta/Layer4_TypeB_Auditing.md) |
+| [AI_Deterministic_Delegation.md](../../../Notes/meta/orchestration/AI_Deterministic_Delegation.md) | [AI_Deterministic_Delegation.md](https://github.com/endisciple13/notes/blob/main/meta/orchestration/AI_Deterministic_Delegation.md) |
+| [Layer4_TypeB_Auditing.md](../../../Notes/meta/verification/Layer4_TypeB_Auditing.md) | [Layer4_TypeB_Auditing.md](https://github.com/endisciple13/notes/blob/main/meta/verification/Layer4_TypeB_Auditing.md) |
 
 ## Layer 4 invariant summary (canonical in blueprints)
 

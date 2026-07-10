@@ -8,48 +8,10 @@ dependencies:
   - math/supply-planning/Math_Advanced_OR_Addendum.md
   - projects/mrp/supply-planning/blueprints/SP_RM_Phase4.md
   - projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md
-  - projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
 tags: []
 invariants:
   - id: portfolio-conservation
     statement: "Portfolio MILP disaggregation preserves total resource allocation across product families"
-inherited_invariants:
-  - id: bellman-optimality
-    from: math/supply-planning/Math_Advanced_OR_Addendum.md
-    status: planned
-    enforced_by: "tests/or/test_bellman_optimality.py::test_bellman_backup_holds"
-  - id: disaggregation-conservation
-    from: math/supply-planning/Math_Advanced_OR_Addendum.md
-    status: planned
-    enforced_by: "tests/or/test_disaggregation_conservation.py::test_family_totals_preserved"
-  - id: cumulative-lead-time
-    from: projects/mrp/supply-planning/blueprints/SP_RM_Phase4.md
-    status: planned
-    enforced_by: "tests/phase4/test_cumulative_lead_time.py::test_multi_echelon_lead_time_respected"
-  - id: zero-chaos-delta-zero
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_zero_chaos_delta_zero.py::test_zero_chaos_delta_zero_no_chaos_events"
-  - id: mass-balance
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_mass_balance.py::test_mass_balance_per_period"
-  - id: inheritance-gluing
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_inheritance_gluing.py::test_inheritance_gluing_on_hand"
-  - id: chaos-support
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_chaos_support.py::test_diff_support_subset"
-  - id: run-determinism
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_run_determinism.py::test_byte_identical_outputs"
-  - id: export-round-trip
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: planned
-    enforced_by: "tests/invariants/test_export_round_trip.py::test_excel_values_match_source"
 ---
 # Technical Blueprint: Phase 5 - Portfolio Optimizer (Jurisdictional Resource Disaggregation)
 

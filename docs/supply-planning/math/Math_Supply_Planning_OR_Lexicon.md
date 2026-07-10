@@ -9,9 +9,9 @@ dependencies:
 tags: []
 invariants:
   - id: inventory-balance
-    statement: "I_t = I_{t-1} + R_t - D_t; decomposed R_t = S_t + u_t when scheduled and planned receipts are tracked separately"
+    statement: "Inventory balance I_t = I_{t-1} + R_t - D_t holds for all periods t"
   - id: non-negative-controls
-    statement: "S_t, u_t, and R_t must be non-negative; u_t is the control variable"
+    statement: "Control variables receipts R_t and planned orders must be non-negative"
 ---
 # Supply Planning OR Lexicon
 

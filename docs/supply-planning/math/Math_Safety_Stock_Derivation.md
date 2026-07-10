@@ -5,8 +5,8 @@ id: math-safety-stock-derivation
 type: math_domain
 status: draft
 dependencies:
-  - meta/Layer4_TypeB_Auditing.md
   - meta/OR_AI_ASI.md
+  - meta/verification/Layer4_TypeB_Auditing.md
 tags: []
 invariants:
   - id: rop-formula
@@ -20,7 +20,7 @@ Formal derivation of Demand During Lead Time (DDLT), safety stock ($SS$), and re
 
 **Layer 4 invariants:** The MRP engine should enforce $ROP = E[DDLT] + SS$ and $SS = Z \times \sigma_{DDLT}$ given valid inputs. Flag: verify `mrp_pipeline` tests/schemas cover these formulas when implementation matures.
 
-See also [OR_AI_ASI.md](../../../../Notes/meta/OR_AI_ASI.md) for OR pillar context (state space, constraints, objective function) and [Layer4_TypeB_Auditing.md](../../../../Notes/meta/Layer4_TypeB_Auditing.md) for conservation and state-machine invariants.
+See also [OR_AI_ASI.md](../../../../Notes/meta/OR_AI_ASI.md) for OR pillar context (state space, constraints, objective function) and [Layer4_TypeB_Auditing.md](../../../../Notes/meta/verification/Layer4_TypeB_Auditing.md) for conservation and state-machine invariants.
 
 ## Part 1: The Foundation of Chaos
 
@@ -220,4 +220,4 @@ The mechanism depends on whether demand is **Forecasted** (Peace Time) or **Firm
 - [projects/mrp/README.md](../../../../Notes/projects/mrp/README.md) — MRP project notes index.
 - [projects/mrp/supply-planning/frameworks/Two_Dials_Framework.md](../frameworks/Two_Dials_Framework.md) — peace/war demand-state application of triage penalties.
 - [meta/OR_AI_ASI.md](../../../../Notes/meta/OR_AI_ASI.md) — OR framework and supply-planning pillar examples.
-- [meta/Layer4_TypeB_Auditing.md](../../../../Notes/meta/Layer4_TypeB_Auditing.md) — invariant auditing for deterministic engines.
+- [meta/verification/Layer4_TypeB_Auditing.md](../../../../Notes/meta/verification/Layer4_TypeB_Auditing.md) — invariant auditing for deterministic engines.

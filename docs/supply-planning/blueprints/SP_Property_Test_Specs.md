@@ -5,47 +5,14 @@ id: projects-mrp-supply-planning-blueprints-SP_Property_Test_Specs
 type: blueprint
 status: draft
 dependencies:
-  - projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
+  - projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
 tags:
   - invariants
   - layer4
   - hypothesis
   - property-testing
 invariants: []
-inherited_invariants:
-  - id: zero-chaos-delta-zero
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_zero_chaos_delta_zero.py::test_zero_chaos_delta_zero_no_chaos_events"
-  - id: mass-balance
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_mass_balance.py::test_mass_balance_per_period"
-  - id: inheritance-gluing
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_inheritance_gluing.py::test_inheritance_gluing_on_hand"
-  - id: chaos-support
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_chaos_support.py::test_diff_support_subset"
-  - id: run-determinism
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_run_determinism.py::test_byte_identical_outputs"
-  - id: export-round-trip
-    from: projects/mrp/supply-planning/frameworks/MRP_Invariant_Suite.md
-    status: enforced
-    enforced_by: "tests/invariants/test_export_round_trip.py::test_excel_values_match_source"
-  - id: inventory-balance
-    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
-    status: enforced
-    enforced_by: "tests/lexicon/test_inventory_balance.py::test_pab_recursion_matches_lexicon"
-  - id: non-negative-controls
-    from: math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
-    status: enforced
-    enforced_by: "tests/lexicon/test_non_negative_controls.py::test_inventory_and_receipts_non_negative"
 ---
 # SP Property Test Specs (Supply Planning & MRP Engine)
 
@@ -53,7 +20,7 @@ inherited_invariants:
 >
 > **Note on Schema Sequencing:** The `inherited_invariants:` frontmatter block presumes the chain-auditor plan's FM-015..FM-018 rules have landed in `scripts/validate_frontmatter.py`. Per plan instruction §IV.6, all rows are shipped as `status: planned` during initial Fable authorship and must not be stripped.
 >
-> **Theory & Mathematical Foundations:** Autoformalization of Layer 1 invariants from [MRP_Invariant_Suite.md](../frameworks/MRP_Invariant_Suite.md) and Operations Research foundations from [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) into universally quantified Hypothesis property tests. Governed by [Invariant_Authorship.md](../../../../Notes/meta/Invariant_Authorship.md) §VI.4 (progression to Hypothesis properties per module) and §VII.1 (test-writer non-circularity).
+> **Theory & Mathematical Foundations:** Autoformalization of Layer 1 invariants from [MRP_Invariant_Suite.md](../frameworks/MRP_Invariant_Suite.md) and Operations Research foundations from [Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) into universally quantified Hypothesis property tests. Governed by [Invariant_Authorship.md](../../../../Notes/meta/rigor/Invariant_Authorship.md) §VI.4 (progression to Hypothesis properties per module) and §VII.1 (test-writer non-circularity).
 
 ## I. Fable Autoformalization Strategy & Scope
 

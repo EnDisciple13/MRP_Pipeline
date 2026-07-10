@@ -6,7 +6,7 @@ type: architecture
 status: draft
 dependencies:
   - math/supply-planning/Math_Supply_Planning_OR_Lexicon.md
-  - meta/Layer4_TypeB_Auditing.md
+  - meta/verification/Layer4_TypeB_Auditing.md
 tags: []
 invariants:
   - id: mandatory-beta
@@ -22,7 +22,7 @@ Layer 1 architecture note for the [MRP Pipeline](../../../../Notes/projects/mrp/
 
 - [../roadmaps/MRP_V2_Roadmap.md](../roadmaps/MRP_V2_Roadmap.md) — next engine evolution (multi-echelon, cost optimization).
 - [../../../../math/supply-planning/Math_Supply_Planning_OR_Lexicon.md](../math/Math_Supply_Planning_OR_Lexicon.md) — OR vocabulary and state/control equations.
-- [../../../meta/Layer4_TypeB_Auditing.md](../../../../Notes/projects/meta/Layer4_TypeB_Auditing.md) — conservation and state-machine invariants.
+- [../../../meta/verification/Layer4_TypeB_Auditing.md](../../../../Notes/projects/meta/verification/Layer4_TypeB_Auditing.md) — conservation and state-machine invariants.
 - [../blueprints/SP_RM_Phase1.md](../blueprints/SP_RM_Phase1.md) — Phase 1 sandbox blueprint (prerequisite).
 
 ---
