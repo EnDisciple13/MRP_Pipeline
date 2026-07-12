@@ -98,7 +98,7 @@ This is your custom architecture. The Scale Dial is turned down to your specific
 
 By building both a local MRP and a local MILP, you create a **Digital Twin** of the global ecosystem. It perfectly mirrors the Global Scale's fractal time splits, allowing for immediate, offline mathematical prototyping.
 
-**The Connected Graph:** Injected chaos only spreads through two vectors: **Vertical** (shared BOM components) or **Horizontal** (shared machine routing). By isolating these vectors, the solver avoids the curse of dimensionality.
+**The Connected Graph:** Within an explicit dependency model, injected chaos propagates through enumerated coupling vectors. **Vertical** (shared BOM components) and **Horizontal** (shared machine routing) are the minimum structural edges, not an exhaustive list: shared suppliers, labor pools, tooling, transport, inventory allocation, substitutions, demand priorities, and commercial constraints may enlarge the affected subgraph. Local isolation is valid only relative to declared boundary conditions; the model must expand or escalate when an out-of-scope coupling appears.
 
 ### **1\. Local Frozen Zone (Operational Horizon: Days 1 to 30\)**
 
